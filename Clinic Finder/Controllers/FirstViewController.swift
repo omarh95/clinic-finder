@@ -10,38 +10,29 @@ import UIKit
 import FirebaseDatabase
 import MapKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LoadClinicsTaskerDelegate {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var tableView: UITableView!
     
-    var ref: DatabaseReference!
-    var clinics = [Clinic]()
-
+    var loadClinicsTasker: LoadClinicsTasker!
+    var allClinics: [Clinic] {
+        get {
+            return LoadClinicsButler.sharedInstance.allClinics
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadClinicsTasker = LoadClinicsTasker()
+        loadClinicsTasker.delegate = self
         setupTableView()
-        ref = Database.database().reference()
-        ref.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
-            guard let strongSelf = self else { return }
-            guard let allClinicData = snapshot.value as? [String: Any] else { return }
-            for case let (clinicName, clinicData) as (String, [String: Any]) in allClinicData {
-                guard let clinicLocationData = clinicData["Location"] as? [String: Double] else { return }
-                let clinicCoordinates = CLLocationCoordinate2D(latitude: clinicLocationData["Lat"]!,
-                                                               longitude: clinicLocationData["Long"]!)
-                strongSelf.clinics.append(Clinic(name: clinicName, location: clinicCoordinates))
-                print(clinicData)
-            }
-            strongSelf.setupMapView()
-            strongSelf.tableView.reloadData()
-        })
-        
-        
+        loadClinicsTasker.getAllClinics()
     }
 
     //MARK: Helper Methods
     private func setupMapView() {
-        for clinic in clinics {
+        for clinic in allClinics {
             let annotation = MKPointAnnotation()
             annotation.coordinate = clinic.location
             mapView.addAnnotation(annotation)
@@ -58,14 +49,23 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return clinics.count
+        return allClinics.count
     }
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell!
-        cell.textLabel?.text = clinics[indexPath.row].name
+        cell.textLabel?.text = allClinics[indexPath.row].name
         return cell
+    }
+    
+    //MARK: LoadClinicsTaskerDelegate Methods
+    func didSucceedLoadingAllClinics(_ tasker: LoadClinicsTasker) {
+        setupMapView()
+        tableView.reloadData()
+    }
+    func didFailLoadingAllClinics(_ tasker: LoadClinicsTasker, error: Error!) {
+        //display error message
     }
     
 }
