@@ -1,8 +1,0 @@
-version: "Apple Swift version 4.0.3 (swiftlang-900.0.74.1 clang-900.0.39.2)"
-options: "1432dc58b6ba7f520c2987868c490212"
-build_time: [1521949584, 61443000]
-inputs:
-  "/Users/oh185011/Documents/Clinic Finder/Clinic Finder/SecondViewController.swift": [1521935149, 0]
-  "/Users/oh185011/Documents/Clinic Finder/Clinic Finder/Models/Clinic.swift": [1521943118, 0]
-  "/Users/oh185011/Documents/Clinic Finder/Clinic Finder/AppDelegate.swift": [1521939460, 0]
-  "/Users/oh185011/Documents/Clinic Finder/Clinic Finder/FirstViewController.swift": [1521949583, 0]

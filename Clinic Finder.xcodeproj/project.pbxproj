@@ -21,6 +21,9 @@
 		877CF66A2067253200F2B1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877CF6692067253200F2B1F9 /* GoogleService-Info.plist */; };
 		877CF66B2067253200F2B1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877CF6692067253200F2B1F9 /* GoogleService-Info.plist */; };
 		877CF66C2067253200F2B1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877CF6692067253200F2B1F9 /* GoogleService-Info.plist */; };
+		87A89EA120675888003512E1 /* GetClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* GetClinicsTasker.swift */; };
+		87A89EA220675888003512E1 /* GetClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* GetClinicsTasker.swift */; };
+		87A89EA320675888003512E1 /* GetClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* GetClinicsTasker.swift */; };
 		E290E484231091A1DE9FEA92 /* Pods_Clinic_FinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA5E5D18185382E5E8322E5 /* Pods_Clinic_FinderUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +65,7 @@
 		877CF65B20671AAE00F2B1F9 /* Clinic_FinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clinic_FinderUITests.swift; sourceTree = "<group>"; };
 		877CF65D20671AAE00F2B1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		877CF6692067253200F2B1F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87A89EA020675888003512E1 /* GetClinicsTasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetClinicsTasker.swift; sourceTree = "<group>"; };
 		889D3C3DB0A92434D40787A0 /* Pods-Clinic FinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clinic FinderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clinic FinderUITests/Pods-Clinic FinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADA5E5D18185382E5E8322E5 /* Pods_Clinic_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clinic_FinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F74BB96661E5279A058411 /* Pods-Clinic FinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clinic FinderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clinic FinderUITests/Pods-Clinic FinderUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		877CF63820671AAD00F2B1F9 /* Clinic Finder */ = {
 			isa = PBXGroup;
 			children = (
+				87A89E9F20675866003512E1 /* Taskers */,
 				8765EF64206732B4008EBC8B /* Models */,
 				877CF63920671AAD00F2B1F9 /* AppDelegate.swift */,
 				877CF63B20671AAD00F2B1F9 /* FirstViewController.swift */,
@@ -182,6 +187,14 @@
 				877CF65D20671AAE00F2B1F9 /* Info.plist */,
 			);
 			path = "Clinic FinderUITests";
+			sourceTree = "<group>";
+		};
+		87A89E9F20675866003512E1 /* Taskers */ = {
+			isa = PBXGroup;
+			children = (
+				87A89EA020675888003512E1 /* GetClinicsTasker.swift */,
+			);
+			path = Taskers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				877CF63E20671AAD00F2B1F9 /* SecondViewController.swift in Sources */,
+				87A89EA120675888003512E1 /* GetClinicsTasker.swift in Sources */,
 				8765EF63206732A9008EBC8B /* Clinic.swift in Sources */,
 				877CF63A20671AAD00F2B1F9 /* AppDelegate.swift in Sources */,
 				877CF63C20671AAD00F2B1F9 /* FirstViewController.swift in Sources */,
@@ -495,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A89EA220675888003512E1 /* GetClinicsTasker.swift in Sources */,
 				877CF65120671AAE00F2B1F9 /* Clinic_FinderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A89EA320675888003512E1 /* GetClinicsTasker.swift in Sources */,
 				877CF65C20671AAE00F2B1F9 /* Clinic_FinderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

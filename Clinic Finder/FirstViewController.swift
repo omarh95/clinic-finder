@@ -20,7 +20,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setupTableView()
         ref = Database.database().reference()
         ref.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             guard let strongSelf = self else { return }
@@ -31,16 +31,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                                                                longitude: clinicLocationData["Long"]!)
                 strongSelf.clinics.append(Clinic(name: clinicName, location: clinicCoordinates))
                 print(clinicData)
-                strongSelf.setupMapView()
             }
+            strongSelf.setupMapView()
+            strongSelf.tableView.reloadData()
         })
         
-        setupTableView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
     //MARK: Helper Methods
@@ -50,6 +46,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             annotation.coordinate = clinic.location
             mapView.addAnnotation(annotation)
         }
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
     private func setupTableView() {
@@ -61,18 +58,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //MARK: UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return clinics.count
     }
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // create a new cell if needed or reuse an old one
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell!
-        
-        // set the text from the data model
-        cell.textLabel?.text = "Alfarooq Clinic"
-        
+        cell.textLabel?.text = clinics[indexPath.row].name
         return cell
     }
     
