@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1056505834583-b1e7bpk2uimuqqn5kprg8kr59n5e8nif.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1056505834583-b1e7bpk2uimuqqn5kprg8kr59n5e8nif</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBL-w8yZ0TcqLtmvCWpvPV0kyhGoW3w8QI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1056505834583</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Clinic-Finder.Clinic-Finder</string>
+	<key>PROJECT_ID</key>
+	<string>free-clinic-bf903</string>
+	<key>STORAGE_BUCKET</key>
+	<string>free-clinic-bf903.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1056505834583:ios:79519d99ef18addf</string>
+	<key>DATABASE_URL</key>
+	<string>https://free-clinic-bf903.firebaseio.com</string>
+</dict>
+</plist>
