@@ -10,12 +10,13 @@ import UIKit
 import FirebaseDatabase
 import MapKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LoadClinicsTaskerDelegate {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LoadClinicsTaskerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var tableView: UITableView!
     
     var loadClinicsTasker: LoadClinicsTasker!
+    let locationManager = CLLocationManager()
     var allClinics: [Clinic] {
         get {
             return LoadClinicsButler.sharedInstance.allClinics
@@ -24,6 +25,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocationManager()
         loadClinicsTasker = LoadClinicsTasker()
         loadClinicsTasker.delegate = self
         setupTableView()
@@ -31,7 +33,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     //MARK: Helper Methods
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+    }
+    
     private func setupMapView() {
+        mapView.showsUserLocation = true
         for clinic in allClinics {
             let annotation = MKPointAnnotation()
             annotation.coordinate = clinic.location
@@ -46,6 +57,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
     }
 
+    //MARK: UITableViewDelegate Methods
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRow = indexPath.row
+        let selectedClinic = allClinics[selectedRow]
+        mapView.setCenter(selectedClinic.location, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     //MARK: UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,9 +82,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         setupMapView()
         tableView.reloadData()
     }
+    
     func didFailLoadingAllClinics(_ tasker: LoadClinicsTasker, error: Error!) {
         //display error message
     }
     
+    //MARK: MKMapViewDelegate Methods
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        if annotation is MKUserLocation {
+//            return nil
+//        }
+        return nil
+    }
 }
 

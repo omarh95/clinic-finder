@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Georgia Tech.gpx">
+   </FileRef>
+   <FileRef
       location = "group:Clinic Finder.xcodeproj">
    </FileRef>
    <FileRef
