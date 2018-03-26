@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import MapKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LoadClinicsTaskerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var tableView: UITableView!
@@ -25,7 +25,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Clinic Finder"
         setupLocationManager()
+        let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
+        self.navigationItem.rightBarButtonItem = buttonItem
         loadClinicsTasker = LoadClinicsTasker()
         loadClinicsTasker.delegate = self
         setupTableView()
@@ -56,16 +59,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
     }
-
-    //MARK: UITableViewDelegate Methods
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedRow = indexPath.row
-        let selectedClinic = allClinics[selectedRow]
-        mapView.setCenter(selectedClinic.location, animated: true)
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
     
-    //MARK: UITableViewDataSource Methods
+
+
+}
+
+//MARK: UITableViewDataSource Methods
+extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allClinics.count
     }
@@ -77,7 +78,17 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    //MARK: LoadClinicsTaskerDelegate Methods
+    //MARK: UITableViewDelegate Methods
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRow = indexPath.row
+        let selectedClinic = allClinics[selectedRow]
+        mapView.setCenter(selectedClinic.location, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+//MARK: LoadClinicsTaskerDelegate Methods
+extension FirstViewController: LoadClinicsTaskerDelegate {
     func didSucceedLoadingAllClinics(_ tasker: LoadClinicsTasker) {
         setupMapView()
         tableView.reloadData()
@@ -86,13 +97,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func didFailLoadingAllClinics(_ tasker: LoadClinicsTasker, error: Error!) {
         //display error message
     }
-    
-    //MARK: MKMapViewDelegate Methods
+}
+
+//MARK: MKMapViewDelegate Methods
+extension FirstViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        if annotation is MKUserLocation {
-//            return nil
-//        }
         return nil
     }
 }
-

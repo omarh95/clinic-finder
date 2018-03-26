@@ -30,6 +30,9 @@
 		87A89EAA20685C26003512E1 /* LoadClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* LoadClinicsButler.swift */; };
 		87A89EAB20685C26003512E1 /* LoadClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* LoadClinicsButler.swift */; };
 		87A89EAC20685C26003512E1 /* LoadClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* LoadClinicsButler.swift */; };
+		87A89EB420687635003512E1 /* Georgia Tech.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 87A89EB320687635003512E1 /* Georgia Tech.gpx */; };
+		87A89EB520687635003512E1 /* Georgia Tech.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 87A89EB320687635003512E1 /* Georgia Tech.gpx */; };
+		87A89EB620687635003512E1 /* Georgia Tech.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 87A89EB320687635003512E1 /* Georgia Tech.gpx */; };
 		E290E484231091A1DE9FEA92 /* Pods_Clinic_FinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA5E5D18185382E5E8322E5 /* Pods_Clinic_FinderUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,7 @@
 		87A89EA020675888003512E1 /* LoadClinicsTasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsTasker.swift; sourceTree = "<group>"; };
 		87A89EA420685AAB003512E1 /* LoadClinicsTaskerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsTaskerInterface.swift; sourceTree = "<group>"; };
 		87A89EA920685C26003512E1 /* LoadClinicsButler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsButler.swift; sourceTree = "<group>"; };
+		87A89EB320687635003512E1 /* Georgia Tech.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Georgia Tech.gpx"; sourceTree = "<group>"; };
 		889D3C3DB0A92434D40787A0 /* Pods-Clinic FinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clinic FinderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clinic FinderUITests/Pods-Clinic FinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADA5E5D18185382E5E8322E5 /* Pods_Clinic_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clinic_FinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F74BB96661E5279A058411 /* Pods-Clinic FinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clinic FinderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clinic FinderUITests/Pods-Clinic FinderUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 		877CF63820671AAD00F2B1F9 /* Clinic Finder */ = {
 			isa = PBXGroup;
 			children = (
+				87A89EB320687635003512E1 /* Georgia Tech.gpx */,
 				87A89EAE20685C75003512E1 /* Controllers */,
 				87A89EA820685C06003512E1 /* Butlers */,
 				87A89E9F20675866003512E1 /* Taskers */,
@@ -342,6 +347,7 @@
 				877CF64620671AAE00F2B1F9 /* LaunchScreen.storyboard in Resources */,
 				877CF66A2067253200F2B1F9 /* GoogleService-Info.plist in Resources */,
 				877CF64320671AAE00F2B1F9 /* Assets.xcassets in Resources */,
+				87A89EB420687635003512E1 /* Georgia Tech.gpx in Resources */,
 				877CF64120671AAD00F2B1F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				877CF66B2067253200F2B1F9 /* GoogleService-Info.plist in Resources */,
+				87A89EB520687635003512E1 /* Georgia Tech.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				877CF66C2067253200F2B1F9 /* GoogleService-Info.plist in Resources */,
+				87A89EB620687635003512E1 /* Georgia Tech.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
