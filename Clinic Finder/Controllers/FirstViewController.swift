@@ -55,12 +55,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func setupTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-
 
 }
 
@@ -73,8 +70,10 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell!
-        cell.textLabel?.text = allClinics[indexPath.row].name
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "ClinicTableViewCell") as! ClinicTableViewCell
+        cell.clinicNameLabel.text = allClinics[indexPath.row].name
+        cell.clinicDistanceLabel.text = ".2 mi"
+        cell.clinicServicesLabel.text = "first, second, third"
         return cell
     }
     
@@ -84,6 +83,10 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedClinic = allClinics[selectedRow]
         mapView.setCenter(selectedClinic.location, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
     }
 }
 

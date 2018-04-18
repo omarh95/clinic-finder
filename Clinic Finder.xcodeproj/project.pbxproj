@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D57B1F6CCDD4BD2CB8C7C53 /* Pods_Clinic_FinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F40F1375292F96C889DE5 /* Pods_Clinic_FinderTests.framework */; };
 		5F088A89D7B2C8F2C3F8D7B3 /* Pods_Clinic_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25BA1D7959410B97A304CF04 /* Pods_Clinic_Finder.framework */; };
+		875D9FC22086E33500869EC6 /* ClinicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D9FC02086E33500869EC6 /* ClinicTableViewCell.swift */; };
+		875D9FC32086E33500869EC6 /* ClinicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875D9FC12086E33500869EC6 /* ClinicTableViewCell.xib */; };
 		8765EF63206732A9008EBC8B /* Clinic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8765EF62206732A9008EBC8B /* Clinic.swift */; };
 		877CF63A20671AAD00F2B1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877CF63920671AAD00F2B1F9 /* AppDelegate.swift */; };
 		877CF63C20671AAD00F2B1F9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877CF63B20671AAD00F2B1F9 /* FirstViewController.swift */; };
@@ -58,6 +60,8 @@
 		25BA1D7959410B97A304CF04 /* Pods_Clinic_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clinic_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		269F40F1375292F96C889DE5 /* Pods_Clinic_FinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clinic_FinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38982107FEEEA96AAA59067E /* Pods-Clinic FinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clinic FinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clinic FinderTests/Pods-Clinic FinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		875D9FC02086E33500869EC6 /* ClinicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicTableViewCell.swift; sourceTree = "<group>"; };
+		875D9FC12086E33500869EC6 /* ClinicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClinicTableViewCell.xib; sourceTree = "<group>"; };
 		8765EF62206732A9008EBC8B /* Clinic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clinic.swift; sourceTree = "<group>"; };
 		877CF63620671AAD00F2B1F9 /* Clinic Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clinic Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		877CF63920671AAD00F2B1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,17 +173,18 @@
 		877CF63820671AAD00F2B1F9 /* Clinic Finder */ = {
 			isa = PBXGroup;
 			children = (
-				87A89EB320687635003512E1 /* Georgia Tech.gpx */,
-				87A89EAE20685C75003512E1 /* Controllers */,
-				87A89EA820685C06003512E1 /* Butlers */,
-				87A89E9F20675866003512E1 /* Taskers */,
-				8765EF64206732B4008EBC8B /* Models */,
 				877CF63920671AAD00F2B1F9 /* AppDelegate.swift */,
-				877CF63F20671AAD00F2B1F9 /* Main.storyboard */,
 				877CF64220671AAE00F2B1F9 /* Assets.xcassets */,
-				877CF64420671AAE00F2B1F9 /* LaunchScreen.storyboard */,
-				877CF64720671AAE00F2B1F9 /* Info.plist */,
+				87A89EA820685C06003512E1 /* Butlers */,
+				87A89EAE20685C75003512E1 /* Controllers */,
+				87A89EB320687635003512E1 /* Georgia Tech.gpx */,
 				877CF6692067253200F2B1F9 /* GoogleService-Info.plist */,
+				877CF64720671AAE00F2B1F9 /* Info.plist */,
+				877CF64420671AAE00F2B1F9 /* LaunchScreen.storyboard */,
+				877CF63F20671AAD00F2B1F9 /* Main.storyboard */,
+				8765EF64206732B4008EBC8B /* Models */,
+				87A89E9F20675866003512E1 /* Taskers */,
+				87A89EBB206881E5003512E1 /* Views */,
 			);
 			path = "Clinic Finder";
 			sourceTree = "<group>";
@@ -226,6 +231,15 @@
 				877CF63D20671AAD00F2B1F9 /* SecondViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		87A89EBB206881E5003512E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				875D9FC02086E33500869EC6 /* ClinicTableViewCell.swift */,
+				875D9FC12086E33500869EC6 /* ClinicTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +363,7 @@
 				877CF64320671AAE00F2B1F9 /* Assets.xcassets in Resources */,
 				87A89EB420687635003512E1 /* Georgia Tech.gpx in Resources */,
 				877CF64120671AAD00F2B1F9 /* Main.storyboard in Resources */,
+				875D9FC32086E33500869EC6 /* ClinicTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				877CF63E20671AAD00F2B1F9 /* SecondViewController.swift in Sources */,
+				875D9FC22086E33500869EC6 /* ClinicTableViewCell.swift in Sources */,
 				87A89EAA20685C26003512E1 /* LoadClinicsButler.swift in Sources */,
 				87A89EA120675888003512E1 /* LoadClinicsTasker.swift in Sources */,
 				8765EF63206732A9008EBC8B /* Clinic.swift in Sources */,

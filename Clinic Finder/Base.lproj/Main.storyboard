@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,6 +31,53 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="viV-mF-P7G">
                                         <rect key="frame" x="0.0" y="300" width="375" height="254"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClinicTableViewCell" rowHeight="75" id="nS3-0O-zYZ" customClass="ClinicTableViewCell" customModule="Clinic_Finder" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nS3-0O-zYZ" id="23B-NC-L12">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6T-cZ-Heu" userLabel="Clinic Name Label">
+                                                            <rect key="frame" x="8" y="11" width="115" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9O-85-RI1" userLabel="Clinic Services Label">
+                                                            <rect key="frame" x="8" y="45.5" width="317" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLr-Cu-dGa" userLabel="Distance Label">
+                                                            <rect key="frame" x="300" y="11" width="67" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="uGI-ex-fIP"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.49111675126903553" green="0.49111675126903553" blue="0.49111675126903553" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="T9O-85-RI1" secondAttribute="trailing" constant="50" id="1Cm-lv-DjE"/>
+                                                        <constraint firstItem="y6T-cZ-Heu" firstAttribute="top" secondItem="23B-NC-L12" secondAttribute="topMargin" id="Jfi-Pb-srH"/>
+                                                        <constraint firstItem="T9O-85-RI1" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leadingMargin" id="VWX-h5-sUP"/>
+                                                        <constraint firstItem="aLr-Cu-dGa" firstAttribute="trailing" secondItem="23B-NC-L12" secondAttribute="trailingMargin" id="aPg-vg-EBr"/>
+                                                        <constraint firstItem="T9O-85-RI1" firstAttribute="top" secondItem="y6T-cZ-Heu" secondAttribute="bottom" constant="8" id="cB4-bz-oQq"/>
+                                                        <constraint firstItem="y6T-cZ-Heu" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leadingMargin" id="kZf-ma-jd5"/>
+                                                        <constraint firstItem="aLr-Cu-dGa" firstAttribute="top" secondItem="23B-NC-L12" secondAttribute="topMargin" id="vgW-op-g0H"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="clinicDistanceLabel" destination="aLr-Cu-dGa" id="5pB-mW-AMr"/>
+                                                    <outlet property="clinicNameLabel" destination="y6T-cZ-Heu" id="Mw4-zp-MWg"/>
+                                                    <outlet property="clinicServicesLabel" destination="T9O-85-RI1" id="6HK-fb-ExM"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -51,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="-264"/>
+            <point key="canvasLocation" x="1749.5999999999999" y="-264.01799100449779"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
