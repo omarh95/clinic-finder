@@ -14,6 +14,12 @@ class ClinicTableViewCell: UITableViewCell {
     @IBOutlet var clinicServicesLabel: UILabel!
     @IBOutlet var clinicDistanceLabel: UILabel!
     
+    var allClinics: [Clinic] {
+        get {
+            return LoadClinicsButler.sharedInstance.allClinics
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +30,19 @@ class ClinicTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func callButtonPressed(_ sender: Any) {
+        let cellRow = (self.superview! as! UITableView).indexPath(for: self)?.row
+        let selectedClinic = allClinics[cellRow!]
+        if let url = URL(string: "tel://\(selectedClinic.phoneNumber!)"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        } 
+    }
     
+    @IBAction func directionsButtonPressed(_ sender: Any) {
+        print("pressed")
+    }
 }

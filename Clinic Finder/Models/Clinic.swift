@@ -11,10 +11,12 @@ class Clinic {
     
     let name: String!
     let location: CLLocationCoordinate2D!
+    let phoneNumber: Int!
     
-    init(name: String, location: CLLocationCoordinate2D) {
+    init(name: String, location: CLLocationCoordinate2D, phoneNumber: Int) {
         self.name = name
         self.location = location
+        self.phoneNumber = phoneNumber
     }
     
 }

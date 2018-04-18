@@ -64,11 +64,17 @@
                                                             <rect key="frame" x="8" y="82.5" width="42" height="42"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <state key="normal" title="Call"/>
+                                                            <connections>
+                                                                <action selector="callButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="0Bo-6B-6HD"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-gA-eqz">
                                                             <rect key="frame" x="155" y="82.5" width="109" height="42"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                             <state key="normal" title="Directions"/>
+                                                            <connections>
+                                                                <action selector="directionsButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="Ex6-TA-qim"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
