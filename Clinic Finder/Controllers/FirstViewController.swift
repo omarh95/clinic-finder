@@ -15,8 +15,11 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var tableView: UITableView!
     
-    var loadClinicsTasker: LoadClinicsTasker!
-    let locationManager = CLLocationManager()
+    fileprivate var loadClinicsTasker: LoadClinicsTasker!
+    fileprivate let locationManager = CLLocationManager()
+    
+    fileprivate var selectedIndex = -1
+    
     var allClinics: [Clinic] {
         get {
             return LoadClinicsButler.sharedInstance.allClinics
@@ -80,13 +83,20 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     //MARK: UITableViewDelegate Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedRow = indexPath.row
+        selectedIndex = selectedRow
         let selectedClinic = allClinics[selectedRow]
         mapView.setCenter(selectedClinic.location, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        if indexPath.row == selectedIndex {
+            return 125
+        } else {
+            return 75
+        }
     }
 }
 

@@ -32,11 +32,11 @@
                                         <rect key="frame" x="0.0" y="300" width="375" height="254"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClinicTableViewCell" rowHeight="75" id="nS3-0O-zYZ" customClass="ClinicTableViewCell" customModule="Clinic_Finder" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClinicTableViewCell" rowHeight="121" id="nS3-0O-zYZ" customClass="ClinicTableViewCell" customModule="Clinic_Finder" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="121"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nS3-0O-zYZ" id="23B-NC-L12">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6T-cZ-Heu" userLabel="Clinic Name Label">
@@ -60,14 +60,28 @@
                                                             <color key="textColor" red="0.49111675126903553" green="0.49111675126903553" blue="0.49111675126903553" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJZ-D3-gaf">
+                                                            <rect key="frame" x="8" y="82.5" width="42" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="Call"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-gA-eqz">
+                                                            <rect key="frame" x="155" y="82.5" width="109" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <state key="normal" title="Directions"/>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="Lel-gA-eqz" firstAttribute="top" secondItem="T9O-85-RI1" secondAttribute="bottom" constant="16" id="0t3-Gt-COX"/>
                                                         <constraint firstAttribute="trailing" secondItem="T9O-85-RI1" secondAttribute="trailing" constant="50" id="1Cm-lv-DjE"/>
                                                         <constraint firstItem="y6T-cZ-Heu" firstAttribute="top" secondItem="23B-NC-L12" secondAttribute="topMargin" id="Jfi-Pb-srH"/>
                                                         <constraint firstItem="T9O-85-RI1" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leadingMargin" id="VWX-h5-sUP"/>
                                                         <constraint firstItem="aLr-Cu-dGa" firstAttribute="trailing" secondItem="23B-NC-L12" secondAttribute="trailingMargin" id="aPg-vg-EBr"/>
                                                         <constraint firstItem="T9O-85-RI1" firstAttribute="top" secondItem="y6T-cZ-Heu" secondAttribute="bottom" constant="8" id="cB4-bz-oQq"/>
+                                                        <constraint firstItem="RJZ-D3-gaf" firstAttribute="top" secondItem="T9O-85-RI1" secondAttribute="bottom" constant="16" id="i6P-S7-L42"/>
                                                         <constraint firstItem="y6T-cZ-Heu" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leadingMargin" id="kZf-ma-jd5"/>
+                                                        <constraint firstItem="Lel-gA-eqz" firstAttribute="leading" secondItem="RJZ-D3-gaf" secondAttribute="trailing" constant="105" id="sYa-VC-pDW"/>
+                                                        <constraint firstItem="RJZ-D3-gaf" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leading" constant="8" id="uMW-U1-qwx"/>
                                                         <constraint firstItem="aLr-Cu-dGa" firstAttribute="top" secondItem="23B-NC-L12" secondAttribute="topMargin" id="vgW-op-g0H"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
