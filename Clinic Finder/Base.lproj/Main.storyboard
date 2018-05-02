@@ -14,7 +14,7 @@
         <!--Main View-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Main View" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Clinic_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main View" id="9pv-A4-QxB" customClass="SearchClinicsViewController" customModule="Clinic_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,8 +51,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLr-Cu-dGa" userLabel="Distance Label">
-                                                            <rect key="frame" x="300" y="11" width="67" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLr-Cu-dGa" userLabel="Distance Label">
+                                                            <rect key="frame" x="308" y="11" width="67" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="uGI-ex-fIP"/>
                                                             </constraints>
@@ -90,7 +90,7 @@
                                                         <constraint firstItem="oiC-Sr-C0U" firstAttribute="top" secondItem="T9O-85-RI1" secondAttribute="bottom" constant="16.5" id="9DF-Si-XEP"/>
                                                         <constraint firstItem="y6T-cZ-Heu" firstAttribute="top" secondItem="23B-NC-L12" secondAttribute="topMargin" id="Jfi-Pb-srH"/>
                                                         <constraint firstItem="T9O-85-RI1" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leadingMargin" id="VWX-h5-sUP"/>
-                                                        <constraint firstItem="aLr-Cu-dGa" firstAttribute="trailing" secondItem="23B-NC-L12" secondAttribute="trailingMargin" id="aPg-vg-EBr"/>
+                                                        <constraint firstItem="aLr-Cu-dGa" firstAttribute="trailing" secondItem="23B-NC-L12" secondAttribute="trailingMargin" constant="8" id="aPg-vg-EBr"/>
                                                         <constraint firstItem="T9O-85-RI1" firstAttribute="top" secondItem="y6T-cZ-Heu" secondAttribute="bottom" constant="8" id="cB4-bz-oQq"/>
                                                         <constraint firstItem="y6T-cZ-Heu" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leadingMargin" id="kZf-ma-jd5"/>
                                                         <constraint firstItem="oiC-Sr-C0U" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leading" constant="20" id="qDT-L4-fvk"/>
@@ -130,7 +130,7 @@
         <!--Add Clinic-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Clinic_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="AddClinicViewController" customModule="Clinic_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -13,8 +13,8 @@
 		875D9FC32086E33500869EC6 /* ClinicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875D9FC12086E33500869EC6 /* ClinicTableViewCell.xib */; };
 		8765EF63206732A9008EBC8B /* Clinic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8765EF62206732A9008EBC8B /* Clinic.swift */; };
 		877CF63A20671AAD00F2B1F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877CF63920671AAD00F2B1F9 /* AppDelegate.swift */; };
-		877CF63C20671AAD00F2B1F9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877CF63B20671AAD00F2B1F9 /* FirstViewController.swift */; };
-		877CF63E20671AAD00F2B1F9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877CF63D20671AAD00F2B1F9 /* SecondViewController.swift */; };
+		877CF63C20671AAD00F2B1F9 /* SearchClinicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877CF63B20671AAD00F2B1F9 /* SearchClinicsViewController.swift */; };
+		877CF63E20671AAD00F2B1F9 /* AddClinicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877CF63D20671AAD00F2B1F9 /* AddClinicViewController.swift */; };
 		877CF64120671AAD00F2B1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877CF63F20671AAD00F2B1F9 /* Main.storyboard */; };
 		877CF64320671AAE00F2B1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877CF64220671AAE00F2B1F9 /* Assets.xcassets */; };
 		877CF64620671AAE00F2B1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877CF64420671AAE00F2B1F9 /* LaunchScreen.storyboard */; };
@@ -25,6 +25,7 @@
 		877CF66C2067253200F2B1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877CF6692067253200F2B1F9 /* GoogleService-Info.plist */; };
 		879ACD8120995F2C009C436C /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD8020995F2C009C436C /* MapController.swift */; };
 		879ACD8320996060009C436C /* PhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD8220996060009C436C /* PhoneController.swift */; };
+		879ACD86209970B6009C436C /* UIView+LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD85209970B6009C436C /* UIView+LoadingOverlay.swift */; };
 		87A89EA120675888003512E1 /* LoadClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* LoadClinicsTasker.swift */; };
 		87A89EA220675888003512E1 /* LoadClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* LoadClinicsTasker.swift */; };
 		87A89EA320675888003512E1 /* LoadClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* LoadClinicsTasker.swift */; };
@@ -67,8 +68,8 @@
 		8765EF62206732A9008EBC8B /* Clinic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clinic.swift; sourceTree = "<group>"; };
 		877CF63620671AAD00F2B1F9 /* Clinic Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clinic Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		877CF63920671AAD00F2B1F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		877CF63B20671AAD00F2B1F9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		877CF63D20671AAD00F2B1F9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		877CF63B20671AAD00F2B1F9 /* SearchClinicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClinicsViewController.swift; sourceTree = "<group>"; };
+		877CF63D20671AAD00F2B1F9 /* AddClinicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClinicViewController.swift; sourceTree = "<group>"; };
 		877CF64020671AAD00F2B1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		877CF64220671AAE00F2B1F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		877CF64520671AAE00F2B1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		877CF6692067253200F2B1F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		879ACD8020995F2C009C436C /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		879ACD8220996060009C436C /* PhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneController.swift; sourceTree = "<group>"; };
+		879ACD85209970B6009C436C /* UIView+LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadingOverlay.swift"; sourceTree = "<group>"; };
 		87A89EA020675888003512E1 /* LoadClinicsTasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsTasker.swift; sourceTree = "<group>"; };
 		87A89EA420685AAB003512E1 /* LoadClinicsTaskerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsTaskerInterface.swift; sourceTree = "<group>"; };
 		87A89EA920685C26003512E1 /* LoadClinicsButler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsButler.swift; sourceTree = "<group>"; };
@@ -177,11 +179,11 @@
 		877CF63820671AAD00F2B1F9 /* Clinic Finder */ = {
 			isa = PBXGroup;
 			children = (
-				879ACD7F20995F0F009C436C /* Controllers */,
 				877CF63920671AAD00F2B1F9 /* AppDelegate.swift */,
 				877CF64220671AAE00F2B1F9 /* Assets.xcassets */,
 				87A89EA820685C06003512E1 /* Butlers */,
-				87A89EAE20685C75003512E1 /* View Controllers */,
+				879ACD7F20995F0F009C436C /* Controllers */,
+				879ACD842099709B009C436C /* Extensions */,
 				87A89EB320687635003512E1 /* Georgia Tech.gpx */,
 				877CF6692067253200F2B1F9 /* GoogleService-Info.plist */,
 				877CF64720671AAE00F2B1F9 /* Info.plist */,
@@ -189,6 +191,7 @@
 				877CF63F20671AAD00F2B1F9 /* Main.storyboard */,
 				8765EF64206732B4008EBC8B /* Models */,
 				87A89E9F20675866003512E1 /* Taskers */,
+				87A89EAE20685C75003512E1 /* View Controllers */,
 				87A89EBB206881E5003512E1 /* Views */,
 			);
 			path = "Clinic Finder";
@@ -221,6 +224,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		879ACD842099709B009C436C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				879ACD85209970B6009C436C /* UIView+LoadingOverlay.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		87A89E9F20675866003512E1 /* Taskers */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,8 +252,8 @@
 		87A89EAE20685C75003512E1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				877CF63B20671AAD00F2B1F9 /* FirstViewController.swift */,
-				877CF63D20671AAD00F2B1F9 /* SecondViewController.swift */,
+				877CF63B20671AAD00F2B1F9 /* SearchClinicsViewController.swift */,
+				877CF63D20671AAD00F2B1F9 /* AddClinicViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -560,14 +571,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				877CF63E20671AAD00F2B1F9 /* SecondViewController.swift in Sources */,
+				879ACD86209970B6009C436C /* UIView+LoadingOverlay.swift in Sources */,
+				877CF63E20671AAD00F2B1F9 /* AddClinicViewController.swift in Sources */,
 				875D9FC22086E33500869EC6 /* ClinicTableViewCell.swift in Sources */,
 				87A89EAA20685C26003512E1 /* LoadClinicsButler.swift in Sources */,
 				87A89EA120675888003512E1 /* LoadClinicsTasker.swift in Sources */,
 				879ACD8320996060009C436C /* PhoneController.swift in Sources */,
 				8765EF63206732A9008EBC8B /* Clinic.swift in Sources */,
 				877CF63A20671AAD00F2B1F9 /* AppDelegate.swift in Sources */,
-				877CF63C20671AAD00F2B1F9 /* FirstViewController.swift in Sources */,
+				877CF63C20671AAD00F2B1F9 /* SearchClinicsViewController.swift in Sources */,
 				879ACD8120995F2C009C436C /* MapController.swift in Sources */,
 				87A89EA520685AAB003512E1 /* LoadClinicsTaskerInterface.swift in Sources */,
 			);

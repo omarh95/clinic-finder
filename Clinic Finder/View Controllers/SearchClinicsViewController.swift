@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SearchClinicsViewController.swift
 //  Clinic Finder
 //
 //  Created by Hayek, Omar on 3/24/18.
@@ -10,7 +10,7 @@ import UIKit
 import FirebaseDatabase
 import MapKit
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate {
+class SearchClinicsViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var tableView: UITableView!
@@ -28,6 +28,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.showLoadingOverlay()
         self.navigationItem.title = "Clinic Finder"
         setupLocationManager()
         let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
@@ -65,7 +66,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
 }
 
 //MARK: UITableViewDataSource Methods
-extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
+extension SearchClinicsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allClinics.count
@@ -101,10 +102,11 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 //MARK: LoadClinicsTaskerDelegate Methods
-extension FirstViewController: LoadClinicsTaskerDelegate {
+extension SearchClinicsViewController: LoadClinicsTaskerDelegate {
     func didSucceedLoadingAllClinics(_ tasker: LoadClinicsTasker) {
         setupMapView()
         tableView.reloadData()
+        self.view.removeLoadingOverlay()
     }
     
     func didFailLoadingAllClinics(_ tasker: LoadClinicsTasker, error: Error!) {
@@ -113,7 +115,7 @@ extension FirstViewController: LoadClinicsTaskerDelegate {
 }
 
 //MARK: MKMapViewDelegate Methods
-extension FirstViewController: MKMapViewDelegate {
+extension SearchClinicsViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         return nil
     }

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  AddClinicViewController.swift
 //  Clinic Finder
 //
 //  Created by Hayek, Omar on 3/24/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class AddClinicViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
