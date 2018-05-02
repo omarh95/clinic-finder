@@ -20,6 +20,8 @@ class SearchClinicsViewController: UIViewController, CLLocationManagerDelegate {
     
     fileprivate var selectedIndex = -1
     
+    let metersToMilesConversionFactor = 0.000621371192
+    
     var allClinics: [Clinic] {
         get {
             return LoadClinicsButler.sharedInstance.allClinics
@@ -78,7 +80,8 @@ extension SearchClinicsViewController: UITableViewDelegate, UITableViewDataSourc
         let currentClinic = allClinics[indexPath.row]
         cell.clinicNameLabel.text = currentClinic.name
         if let distanceToClinic = currentClinic.location.distanceFromUserLocation() {
-            cell.clinicDistanceLabel.text = String(distanceToClinic)
+            let distanceInMiles = distanceToClinic * metersToMilesConversionFactor
+            cell.clinicDistanceLabel.text = String(format: "%.2f mi", distanceInMiles)
         } else {
             cell.clinicDistanceLabel.text = "N/A"
         }
