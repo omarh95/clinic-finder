@@ -46,13 +46,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9O-85-RI1" userLabel="Clinic Services Label">
-                                                            <rect key="frame" x="8" y="45.5" width="317" height="21"/>
+                                                            <rect key="frame" x="8" y="45.5" width="317" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLr-Cu-dGa" userLabel="Distance Label">
-                                                            <rect key="frame" x="300" y="11" width="67" height="21"/>
+                                                            <rect key="frame" x="300" y="11" width="67" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="uGI-ex-fIP"/>
                                                             </constraints>
@@ -60,34 +60,40 @@
                                                             <color key="textColor" red="0.49111675126903553" green="0.49111675126903553" blue="0.49111675126903553" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJZ-D3-gaf">
-                                                            <rect key="frame" x="8" y="82.5" width="42" height="42"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                            <state key="normal" title="Call"/>
-                                                            <connections>
-                                                                <action selector="callButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="0Bo-6B-6HD"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-gA-eqz">
-                                                            <rect key="frame" x="155" y="82.5" width="109" height="42"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                            <state key="normal" title="Directions"/>
-                                                            <connections>
-                                                                <action selector="directionsButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="Ex6-TA-qim"/>
-                                                            </connections>
-                                                        </button>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oiC-Sr-C0U">
+                                                            <rect key="frame" x="20" y="82.5" width="335" height="30"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJZ-D3-gaf">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="162.5" height="30"/>
+                                                                    <state key="normal" title="Call" image="Call Image">
+                                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="callButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="0Bo-6B-6HD"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-gA-eqz">
+                                                                    <rect key="frame" x="172.5" y="0.0" width="162.5" height="30"/>
+                                                                    <state key="normal" title="Directions" image="Directions Image">
+                                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="directionsButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="Ex6-TA-qim"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Lel-gA-eqz" firstAttribute="top" secondItem="T9O-85-RI1" secondAttribute="bottom" constant="16" id="0t3-Gt-COX"/>
                                                         <constraint firstAttribute="trailing" secondItem="T9O-85-RI1" secondAttribute="trailing" constant="50" id="1Cm-lv-DjE"/>
+                                                        <constraint firstAttribute="trailing" secondItem="oiC-Sr-C0U" secondAttribute="trailing" constant="20" id="5KL-s2-6dj"/>
+                                                        <constraint firstItem="oiC-Sr-C0U" firstAttribute="top" secondItem="T9O-85-RI1" secondAttribute="bottom" constant="16.5" id="9DF-Si-XEP"/>
                                                         <constraint firstItem="y6T-cZ-Heu" firstAttribute="top" secondItem="23B-NC-L12" secondAttribute="topMargin" id="Jfi-Pb-srH"/>
                                                         <constraint firstItem="T9O-85-RI1" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leadingMargin" id="VWX-h5-sUP"/>
                                                         <constraint firstItem="aLr-Cu-dGa" firstAttribute="trailing" secondItem="23B-NC-L12" secondAttribute="trailingMargin" id="aPg-vg-EBr"/>
                                                         <constraint firstItem="T9O-85-RI1" firstAttribute="top" secondItem="y6T-cZ-Heu" secondAttribute="bottom" constant="8" id="cB4-bz-oQq"/>
-                                                        <constraint firstItem="RJZ-D3-gaf" firstAttribute="top" secondItem="T9O-85-RI1" secondAttribute="bottom" constant="16" id="i6P-S7-L42"/>
                                                         <constraint firstItem="y6T-cZ-Heu" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leadingMargin" id="kZf-ma-jd5"/>
-                                                        <constraint firstItem="Lel-gA-eqz" firstAttribute="leading" secondItem="RJZ-D3-gaf" secondAttribute="trailing" constant="105" id="sYa-VC-pDW"/>
-                                                        <constraint firstItem="RJZ-D3-gaf" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leading" constant="8" id="uMW-U1-qwx"/>
+                                                        <constraint firstItem="oiC-Sr-C0U" firstAttribute="leading" secondItem="23B-NC-L12" secondAttribute="leading" constant="20" id="qDT-L4-fvk"/>
                                                         <constraint firstItem="aLr-Cu-dGa" firstAttribute="top" secondItem="23B-NC-L12" secondAttribute="topMargin" id="vgW-op-g0H"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -197,6 +203,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Call Image" width="30" height="30"/>
+        <image name="Directions Image" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
