@@ -32,11 +32,11 @@
                                         <rect key="frame" x="0.0" y="300" width="375" height="254"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClinicTableViewCell" rowHeight="121" id="nS3-0O-zYZ" customClass="ClinicTableViewCell" customModule="Clinic_Finder" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="121"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClinicTableViewCell" rowHeight="163" id="nS3-0O-zYZ" customClass="ClinicTableViewCell" customModule="Clinic_Finder" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="163"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nS3-0O-zYZ" id="23B-NC-L12">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="162.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6T-cZ-Heu" userLabel="Clinic Name Label">
@@ -65,7 +65,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJZ-D3-gaf">
                                                                     <rect key="frame" x="0.0" y="0.0" width="162.5" height="30"/>
-                                                                    <state key="normal" title="Call" image="Call Image">
+                                                                    <state key="normal" image="Call Image">
                                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
                                                                     <connections>
@@ -74,7 +74,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-gA-eqz">
                                                                     <rect key="frame" x="172.5" y="0.0" width="162.5" height="30"/>
-                                                                    <state key="normal" title="Directions" image="Directions Image">
+                                                                    <state key="normal" image="Directions Image">
                                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
                                                                     <connections>
@@ -127,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="1749.5999999999999" y="-264.01799100449779"/>
         </scene>
-        <!--Second-->
+        <!--Add Clinic-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Clinic_Finder" customModuleProvider="target" sceneMemberID="viewController">
@@ -158,7 +158,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Add Clinic" image="Add Clinic" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,7 +186,7 @@
         <scene sceneID="WsB-GH-KUl">
             <objects>
                 <navigationController title="Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="Q2u-4d-j6e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="42a-n0-miE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -203,9 +203,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Add Clinic" width="30" height="30"/>
         <image name="Call Image" width="30" height="30"/>
         <image name="Directions Image" width="30" height="30"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="Search" width="30" height="30"/>
     </resources>
 </document>
