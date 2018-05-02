@@ -11,9 +11,10 @@ import MapKit
 
 extension CLLocationCoordinate2D {
     
-//    func distanceFromUserLocation() -> CLLocationDistance {
-//        
-//    }
+    func distanceFromUserLocation() -> CLLocationDistance? {
+        guard let currentUserLocation = LocationsButler.userCurrentLocation else { return nil }
+        return distance(from: currentUserLocation.coordinate)
+    }
     
     // distance in meters, as explained in CLLoactionDistance definition
     func distance(from: CLLocationCoordinate2D) -> CLLocationDistance {

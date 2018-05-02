@@ -9,6 +9,7 @@ target 'Clinic Finder' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'SwiftLocation', '~> 3.2.3'
 
   target 'Clinic FinderTests' do
     inherit! :search_paths

@@ -27,6 +27,7 @@
 		879ACD8320996060009C436C /* PhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD8220996060009C436C /* PhoneController.swift */; };
 		879ACD86209970B6009C436C /* UIView+LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD85209970B6009C436C /* UIView+LoadingOverlay.swift */; };
 		879ACD88209974C8009C436C /* CLLocationCoordinate2D+DistanceCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD87209974C8009C436C /* CLLocationCoordinate2D+DistanceCalculations.swift */; };
+		879ACD8A209978A5009C436C /* LocationsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD89209978A5009C436C /* LocationsButler.swift */; };
 		87A89EA120675888003512E1 /* LoadClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* LoadClinicsTasker.swift */; };
 		87A89EA220675888003512E1 /* LoadClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* LoadClinicsTasker.swift */; };
 		87A89EA320675888003512E1 /* LoadClinicsTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA020675888003512E1 /* LoadClinicsTasker.swift */; };
@@ -86,6 +87,7 @@
 		879ACD8220996060009C436C /* PhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneController.swift; sourceTree = "<group>"; };
 		879ACD85209970B6009C436C /* UIView+LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadingOverlay.swift"; sourceTree = "<group>"; };
 		879ACD87209974C8009C436C /* CLLocationCoordinate2D+DistanceCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+DistanceCalculations.swift"; sourceTree = "<group>"; };
+		879ACD89209978A5009C436C /* LocationsButler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsButler.swift; sourceTree = "<group>"; };
 		87A89EA020675888003512E1 /* LoadClinicsTasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsTasker.swift; sourceTree = "<group>"; };
 		87A89EA420685AAB003512E1 /* LoadClinicsTaskerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsTaskerInterface.swift; sourceTree = "<group>"; };
 		87A89EA920685C26003512E1 /* LoadClinicsButler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsButler.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				87A89EA920685C26003512E1 /* LoadClinicsButler.swift */,
+				879ACD89209978A5009C436C /* LocationsButler.swift */,
 			);
 			path = Butlers;
 			sourceTree = "<group>";
@@ -508,12 +511,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Clinic Finder/Pods-Clinic Finder-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -585,6 +592,7 @@
 				877CF63A20671AAD00F2B1F9 /* AppDelegate.swift in Sources */,
 				877CF63C20671AAD00F2B1F9 /* SearchClinicsViewController.swift in Sources */,
 				879ACD8120995F2C009C436C /* MapController.swift in Sources */,
+				879ACD8A209978A5009C436C /* LocationsButler.swift in Sources */,
 				87A89EA520685AAB003512E1 /* LoadClinicsTaskerInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

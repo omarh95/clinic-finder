@@ -27,77 +27,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Clinic Finder/Extensions/UIView+LoadingOverlay.swift"
-            timestampString = "546927591.574736"
+            filePath = "Clinic Finder/View Controllers/SearchClinicsViewController.swift"
+            timestampString = "546929370.960705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "showLoadingOverlay()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Clinic Finder/Extensions/UIView+LoadingOverlay.swift"
-            timestampString = "546927591.575825"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "removeLoadingOverlay()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(extension in Clinic_Finder):__ObjC.UIView.removeLoadingOverlay() -&gt; ()"
-                  moduleName = "Clinic Finder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oh185011/Documents/Clinic%20Finder/Clinic%20Finder/Extensions/UIView+LoadingOverlay.swift"
-                  timestampString = "546927147.597139"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__ObjC.UIView) -&gt; Swift.Optional&lt;__ObjC.UIVisualEffectView&gt; in (extension in Clinic_Finder):__ObjC.UIView.removeLoadingOverlay() -&gt; ()"
-                  moduleName = "Clinic Finder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oh185011/Documents/Clinic%20Finder/Clinic%20Finder/Extensions/UIView+LoadingOverlay.swift"
-                  timestampString = "546927147.6001869"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__ObjC.UIVisualEffectView) -&gt; () in (extension in Clinic_Finder):__ObjC.UIView.removeLoadingOverlay() -&gt; ()"
-                  moduleName = "Clinic Finder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/oh185011/Documents/Clinic%20Finder/Clinic%20Finder/Extensions/UIView+LoadingOverlay.swift"
-                  timestampString = "546927147.604985"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

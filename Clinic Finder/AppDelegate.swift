@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        SwiftLocation.Locator.subscribePosition(accuracy: .neighborhood, onUpdate: { (loc) in
+            LocationsButler.userCurrentLocation = loc
+        }) { (err, last) -> (Void) in
+            print("Failed with error: \(err)")
+        }
+        
         return true
     }
 

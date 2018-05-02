@@ -75,8 +75,13 @@ extension SearchClinicsViewController: UITableViewDelegate, UITableViewDataSourc
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "ClinicTableViewCell") as! ClinicTableViewCell
-        cell.clinicNameLabel.text = allClinics[indexPath.row].name
-        cell.clinicDistanceLabel.text = ".2 mi"
+        let currentClinic = allClinics[indexPath.row]
+        cell.clinicNameLabel.text = currentClinic.name
+        if let distanceToClinic = currentClinic.location.distanceFromUserLocation() {
+            cell.clinicDistanceLabel.text = String(distanceToClinic)
+        } else {
+            cell.clinicDistanceLabel.text = "N/A"
+        }
         cell.clinicServicesLabel.text = "first, second, third"
         return cell
     }
