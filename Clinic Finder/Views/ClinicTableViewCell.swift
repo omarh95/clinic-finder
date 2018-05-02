@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ClinicTableViewCell: UITableViewCell {
     
@@ -31,18 +32,19 @@ class ClinicTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func callButtonPressed(_ sender: Any) {
-        let cellRow = (self.superview! as! UITableView).indexPath(for: self)?.row
-        let selectedClinic = allClinics[cellRow!]
-        if let url = URL(string: "tel://\(selectedClinic.phoneNumber!)"), UIApplication.shared.canOpenURL(url) {
-            if #available(iOS 10, *) {
-                UIApplication.shared.open(url)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        } 
+        guard let selectedClinic = getSelectedClinic() else { return }
+        PhoneController.openPhoneApp(withPhoneNumber: selectedClinic.phoneNumber)
     }
     
     @IBAction func directionsButtonPressed(_ sender: Any) {
-        print("pressed")
+        guard let selectedClinic = getSelectedClinic() else { return }
+        MapController.openMap(forLocation: selectedClinic.location, andName: selectedClinic.name)
     }
+    
+    private func getSelectedClinic() -> Clinic? {
+        let tableView = self.superview as! UITableView
+        guard let cellRowIndexPath = tableView.indexPath(for: self) else { return nil }
+        return allClinics[cellRowIndexPath.row]
+    }
+    
 }
