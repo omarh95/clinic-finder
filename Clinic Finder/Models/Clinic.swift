@@ -23,4 +23,14 @@ class Clinic {
         self.phoneNumber = phoneNumber
     }
     
+    func convertToDictionary() -> Dictionary<String, Any>? {
+        guard let clinicName = self.name else { return nil }
+        guard let clinicLocation = self.location else { return nil}
+        guard let clinicPhoneNumber = self.phoneNumber else { return nil }
+        let dictToReturn: [String : Any] = ["name": clinicName,
+                                            "location": ["lat": clinicLocation.latitude, "long": clinicLocation.longitude],
+                                            "phoneNumber": clinicPhoneNumber]
+        return dictToReturn
+    }
+    
 }

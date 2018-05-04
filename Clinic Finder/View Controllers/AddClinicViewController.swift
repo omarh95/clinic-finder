@@ -8,6 +8,7 @@
 
 import Eureka
 import UIKit
+import CoreLocation
 
 class AddClinicViewController: FormViewController {
     
@@ -55,7 +56,10 @@ class AddClinicViewController: FormViewController {
                     self.showAlert(withTitle: "Thanks!",
                                    withMessage: "We will review this submission and add it as soon as we can",
                                    withButtonTitle: "Ok")
-                    self.addClinicTasker.addClinic(self.clinicToBeAdded)
+                    let tempClinic = Clinic(name: "testing this",
+                                            location: CLLocationCoordinate2D(latitude: 123, longitude: 123),
+                                            phoneNumber: 1112223334)
+                    self.addClinicTasker.addClinic(tempClinic)
                 })
             }
     }
