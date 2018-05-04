@@ -6,12 +6,12 @@
 //  Copyright © 2018 Hayek, Omar. All rights reserved.
 //
 
-protocol LoadClinicsTaskerInterface {
+protocol LoadClinicsTaskerInterface: class {
     var delegate: LoadClinicsTaskerDelegate! { get set }
     func getAllClinics()
 }
 
-protocol LoadClinicsTaskerDelegate {
+protocol LoadClinicsTaskerDelegate: class {
     func didSucceedLoadingAllClinics(_ tasker: LoadClinicsTasker)
     func didFailLoadingAllClinics(_ tasker: LoadClinicsTasker, error: Error!)
 }

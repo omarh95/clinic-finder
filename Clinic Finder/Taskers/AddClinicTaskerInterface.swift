@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol AddClinicTaskerInterface {
+protocol AddClinicTaskerInterface: class {
     var delegate: AddClinicTaskerDelegate? { get set }
     func addClinic(_ clinic: Clinic)
 }
 
-protocol AddClinicTaskerDelegate {
+protocol AddClinicTaskerDelegate: class {
     func didSucceedAddingClinic(_ tasker: AddClinicTaskerInterface)
     func didFaillAddingClinic(_ tasker: AddClinicTaskerInterface, error: Error)
 }

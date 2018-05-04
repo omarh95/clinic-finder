@@ -10,7 +10,7 @@ import FirebaseDatabase
 
 class AddClinicTasker: AddClinicTaskerInterface {
     
-    var ref = Database.database().reference()
+    var ref = Database.database().reference().child("Pending Clinics")
     
     var delegate: AddClinicTaskerDelegate?
     

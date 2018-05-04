@@ -15,7 +15,12 @@ class SearchClinicsViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var tableView: UITableView!
     
-    fileprivate var loadClinicsTasker: LoadClinicsTasker!
+    fileprivate lazy var loadClinicsTasker: LoadClinicsTaskerInterface = {
+        let tasker = LoadClinicsTasker()
+        tasker.delegate = self
+        return tasker
+    }()
+    
     fileprivate let locationManager = CLLocationManager()
     
     fileprivate var selectedIndex = -1
@@ -35,8 +40,6 @@ class SearchClinicsViewController: UIViewController, CLLocationManagerDelegate {
         setupLocationManager()
         let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
         self.navigationItem.rightBarButtonItem = buttonItem
-        loadClinicsTasker = LoadClinicsTasker()
-        loadClinicsTasker.delegate = self
         setupTableView()
         loadClinicsTasker.getAllClinics()
     }

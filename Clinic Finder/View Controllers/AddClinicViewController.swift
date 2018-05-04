@@ -11,6 +11,12 @@ import UIKit
 
 class AddClinicViewController: FormViewController {
     
+    fileprivate lazy var addClinicTasker: AddClinicTaskerInterface = {
+        let tasker = AddClinicTasker()
+        tasker.delegate = self
+        return tasker
+    }()
+    
     let clinicToBeAdded = Clinic()
 
     override func viewDidLoad() {
@@ -49,6 +55,7 @@ class AddClinicViewController: FormViewController {
                     self.showAlert(withTitle: "Thanks!",
                                    withMessage: "We will review this submission and add it as soon as we can",
                                    withButtonTitle: "Ok")
+                    self.addClinicTasker.addClinic(self.clinicToBeAdded)
                 })
             }
     }
