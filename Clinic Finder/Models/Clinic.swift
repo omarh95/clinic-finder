@@ -9,15 +9,15 @@ import CoreLocation
 
 class Clinic {
     
-    let name: String!
-    let location: CLLocationCoordinate2D!
-    let phoneNumber: Int!
+    var name: String?
+    var location: CLLocationCoordinate2D?
+    var phoneNumber: Int?
     
     convenience init() {
-        self.init(name: "", location: CLLocationCoordinate2D(), phoneNumber: 0)
+        self.init(name: nil, location: nil, phoneNumber: nil)
     }
     
-    init(name: String, location: CLLocationCoordinate2D, phoneNumber: Int) {
+    init(name: String?, location: CLLocationCoordinate2D?, phoneNumber: Int?) {
         self.name = name
         self.location = location
         self.phoneNumber = phoneNumber

@@ -54,8 +54,10 @@ class SearchClinicsViewController: UIViewController, CLLocationManagerDelegate {
         mapView.showsUserLocation = true
         for clinic in allClinics {
             let annotation = MKPointAnnotation()
-            annotation.coordinate = clinic.location
-            mapView.addAnnotation(annotation)
+            if let location = clinic.location {
+                annotation.coordinate = location
+                mapView.addAnnotation(annotation)
+            }
         }
         mapView.showAnnotations(mapView.annotations, animated: true)
     }
@@ -79,7 +81,7 @@ extension SearchClinicsViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "ClinicTableViewCell") as! ClinicTableViewCell
         let currentClinic = allClinics[indexPath.row]
         cell.clinicNameLabel.text = currentClinic.name
-        if let distanceToClinic = currentClinic.location.distanceFromUserLocation() {
+        if let distanceToClinic = currentClinic.location?.distanceFromUserLocation() {
             let distanceInMiles = distanceToClinic * metersToMilesConversionFactor
             cell.clinicDistanceLabel.text = String(format: "%.2f mi", distanceInMiles)
         } else {
@@ -94,7 +96,10 @@ extension SearchClinicsViewController: UITableViewDelegate, UITableViewDataSourc
         let selectedRow = indexPath.row
         selectedIndex = selectedRow
         let selectedClinic = allClinics[selectedRow]
-        mapView.setCenter(selectedClinic.location, animated: true)
+        if let location = selectedClinic.location {
+            mapView.setCenter(location, animated: true)
+
+        }
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.beginUpdates()
         tableView.endUpdates()

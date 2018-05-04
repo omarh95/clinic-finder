@@ -33,12 +33,16 @@ class ClinicTableViewCell: UITableViewCell {
     }
     @IBAction func callButtonPressed(_ sender: Any) {
         guard let selectedClinic = getSelectedClinic() else { return }
-        PhoneController.openPhoneApp(withPhoneNumber: selectedClinic.phoneNumber)
+        if let phoneNumber = selectedClinic.phoneNumber {
+            PhoneController.openPhoneApp(withPhoneNumber: phoneNumber)
+        }
     }
     
     @IBAction func directionsButtonPressed(_ sender: Any) {
         guard let selectedClinic = getSelectedClinic() else { return }
-        MapController.openMap(forLocation: selectedClinic.location, andName: selectedClinic.name)
+        if let name = selectedClinic.name, let location = selectedClinic.location {
+            MapController.openMap(forLocation: location, andName: name)
+        }
     }
     
     private func getSelectedClinic() -> Clinic? {
