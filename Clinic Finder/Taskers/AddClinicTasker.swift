@@ -15,7 +15,7 @@ class AddClinicTasker: AddClinicTaskerInterface {
     var delegate: AddClinicTaskerDelegate?
     
     func addClinic(_ clinic: Clinic) {
-        print("testing")
+        self.ref.child("new pending clinic").setValue(["username": "testing"])
     }
     
 }
