@@ -15,7 +15,7 @@ class LoadClinicsTasker: LoadClinicsTaskerInterface {
     var ref: DatabaseReference!
 
     func getAllClinics() {
-        ref = Database.database().reference()
+        ref = Database.database().reference().child("Clinics")
         ref.observeSingleEvent(of: .value, with: { [weak self] (snapshot) in
             guard let strongSelf = self else { return }
             guard let allClinicData = snapshot.value as? [String: Any] else { return }

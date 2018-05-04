@@ -55,3 +55,13 @@ class AddClinicViewController: FormViewController {
 
 }
 
+extension AddClinicViewController: AddClinicTaskerDelegate {
+    func didSucceedAddingClinic(_ tasker: AddClinicTaskerInterface) {
+        print("did succeed adding clinic")
+    }
+    
+    func didFaillAddingClinic(_ tasker: AddClinicTaskerInterface, error: Error) {
+        print("did fail adding clinic")
+    }
+}
+
