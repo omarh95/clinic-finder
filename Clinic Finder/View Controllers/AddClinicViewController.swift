@@ -27,11 +27,15 @@ class AddClinicViewController: FormViewController {
             <<< TextRow() { row in
                 row.title = "Clinic Name"
                 row.placeholder = "Enter name here"
-            }
+                }.onChange({ (row) in
+                    self.clinicToBeAdded.name = row.value
+                })
             <<< PhoneRow() {
                 $0.title = "Clinic Phone Number"
                 $0.placeholder = "e.g. 4042781234"
-            }
+                }.onChange({ (row) in
+                    self.clinicToBeAdded.phoneNumber = Int(row.value!)
+                })
         +++ Section("Location Information")
             <<< TextRow() { row in
                 row.title = "Address Line 1"
@@ -56,10 +60,9 @@ class AddClinicViewController: FormViewController {
                     self.showAlert(withTitle: "Thanks!",
                                    withMessage: "We will review this submission and add it as soon as we can",
                                    withButtonTitle: "Ok")
-                    let tempClinic = Clinic(name: "testing this",
-                                            location: CLLocationCoordinate2D(latitude: 123, longitude: 123),
-                                            phoneNumber: 1112223334)
-                    self.addClinicTasker.addClinic(tempClinic)
+                    // Fake location until geocoding is added
+                    self.clinicToBeAdded.location = CLLocationCoordinate2D(latitude: 123, longitude: 123)
+                    self.addClinicTasker.addClinic(self.clinicToBeAdded)
                 })
             }
     }
