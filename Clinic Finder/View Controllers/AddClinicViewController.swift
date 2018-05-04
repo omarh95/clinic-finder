@@ -6,20 +6,48 @@
 //  Copyright © 2018 Hayek, Omar. All rights reserved.
 //
 
+import Eureka
 import UIKit
 
-class AddClinicViewController: UIViewController {
+class AddClinicViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        form
+        +++ Section("Clinic Information")
+            <<< TextRow() { row in
+                row.title = "Clinic Name"
+                row.placeholder = "Enter name here"
+            }
+            <<< PhoneRow() {
+                $0.title = "Clinic Phone Number"
+                $0.placeholder = "e.g. 4042781234"
+            }
+        +++ Section("Location Information")
+            <<< TextRow() { row in
+                row.title = "Address Line 1"
+                row.placeholder = "E.g. 123 Sesame St."
+            }
+            <<< TextRow() { row in
+                row.title = "Address Line 2"
+                row.placeholder = "E.g. Suite 123"
+            }
+            <<< TextRow() { row in
+                row.title = "City"
+                row.placeholder = "E.g. Atlanta"
+            }
+            <<< TextRow() { row in
+                row.title = "Zipcode"
+                row.placeholder = "E.g. 30308"
+            }
+        +++ Section()
+            <<< ButtonRow() { row in
+                row.title = "Submit"
+                row.onCellSelection({ (cell, row) in
+                    print("submit pressed")
+                })
+            }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
