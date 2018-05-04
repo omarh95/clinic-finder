@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D57B1F6CCDD4BD2CB8C7C53 /* Pods_Clinic_FinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269F40F1375292F96C889DE5 /* Pods_Clinic_FinderTests.framework */; };
 		5F088A89D7B2C8F2C3F8D7B3 /* Pods_Clinic_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25BA1D7959410B97A304CF04 /* Pods_Clinic_Finder.framework */; };
+		8707819B209C0B56008D623E /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8707819A209C0B56008D623E /* UIViewController+Alerts.swift */; };
 		875D9FC22086E33500869EC6 /* ClinicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D9FC02086E33500869EC6 /* ClinicTableViewCell.swift */; };
 		875D9FC32086E33500869EC6 /* ClinicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875D9FC12086E33500869EC6 /* ClinicTableViewCell.xib */; };
 		8765EF63206732A9008EBC8B /* Clinic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8765EF62206732A9008EBC8B /* Clinic.swift */; };
@@ -65,6 +66,7 @@
 		25BA1D7959410B97A304CF04 /* Pods_Clinic_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clinic_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		269F40F1375292F96C889DE5 /* Pods_Clinic_FinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clinic_FinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38982107FEEEA96AAA59067E /* Pods-Clinic FinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clinic FinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clinic FinderTests/Pods-Clinic FinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8707819A209C0B56008D623E /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		875D9FC02086E33500869EC6 /* ClinicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicTableViewCell.swift; sourceTree = "<group>"; };
 		875D9FC12086E33500869EC6 /* ClinicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClinicTableViewCell.xib; sourceTree = "<group>"; };
 		8765EF62206732A9008EBC8B /* Clinic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clinic.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				879ACD85209970B6009C436C /* UIView+LoadingOverlay.swift */,
 				879ACD87209974C8009C436C /* CLLocationCoordinate2D+DistanceCalculations.swift */,
+				8707819A209C0B56008D623E /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				875D9FC22086E33500869EC6 /* ClinicTableViewCell.swift in Sources */,
 				87A89EAA20685C26003512E1 /* LoadClinicsButler.swift in Sources */,
 				87A89EA120675888003512E1 /* LoadClinicsTasker.swift in Sources */,
+				8707819B209C0B56008D623E /* UIViewController+Alerts.swift in Sources */,
 				879ACD8320996060009C436C /* PhoneController.swift in Sources */,
 				879ACD88209974C8009C436C /* CLLocationCoordinate2D+DistanceCalculations.swift in Sources */,
 				8765EF63206732A9008EBC8B /* Clinic.swift in Sources */,

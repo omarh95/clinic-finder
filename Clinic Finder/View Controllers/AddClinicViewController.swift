@@ -10,6 +10,8 @@ import Eureka
 import UIKit
 
 class AddClinicViewController: FormViewController {
+    
+    let clinicToBeAdded = Clinic()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +46,9 @@ class AddClinicViewController: FormViewController {
             <<< ButtonRow() { row in
                 row.title = "Submit"
                 row.onCellSelection({ (cell, row) in
-                    print("submit pressed")
+                    self.showAlert(withTitle: "Thanks!",
+                                   withMessage: "We will review this submission and add it as soon as we can",
+                                   withButtonTitle: "Ok")
                 })
             }
     }
