@@ -9,7 +9,7 @@
 import Foundation
 
 protocol AddClinicTaskerInterface: class {
-    var delegate: AddClinicTaskerDelegate? { get set }
+    weak var delegate: AddClinicTaskerDelegate? { get set }
     func addClinic(_ clinic: Clinic)
 }
 

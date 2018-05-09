@@ -18,7 +18,20 @@ class AddClinicViewController: FormViewController {
         return tasker
     }()
     
-    let clinicToBeAdded = Clinic()
+    fileprivate lazy var getCoordinatesTasker: GetCoordinatesFromAddressStringTaskerInterface = {
+        let tasker = GetCoordinatesFromAddressStringTasker()
+        tasker.delegate = self
+        return tasker
+    }()
+    
+    private let clinicToBeAdded = Clinic()
+    
+    // The order in which the address string should be formed
+    private let addressPattern = ["address_line_1",
+                                  "address_line_2",
+                                  "city",
+                                  "state",
+                                  "zipcode"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,18 +51,27 @@ class AddClinicViewController: FormViewController {
                 })
         +++ Section("Location Information")
             <<< TextRow() { row in
+                row.tag = "address_line_1"
                 row.title = "Address Line 1"
                 row.placeholder = "E.g. 123 Sesame St."
             }
             <<< TextRow() { row in
+                row.tag = "address_line_2"
                 row.title = "Address Line 2"
                 row.placeholder = "E.g. Suite 123"
             }
             <<< TextRow() { row in
+                row.tag = "city"
                 row.title = "City"
                 row.placeholder = "E.g. Atlanta"
             }
             <<< TextRow() { row in
+                row.tag = "state"
+                row.title = "State"
+                row.placeholder = "GA"
+            }
+            <<< TextRow() { row in
+                row.tag = "zipcode"
                 row.title = "Zipcode"
                 row.placeholder = "E.g. 30308"
             }
@@ -61,10 +83,24 @@ class AddClinicViewController: FormViewController {
                                    withMessage: "We will review this submission and add it as soon as we can",
                                    withButtonTitle: "Ok")
                     // Fake location until geocoding is added
+                    self.getCoordinatesTasker.getCoordinatesFromAddressString(self.getAddressString())
+                    
                     self.clinicToBeAdded.location = CLLocationCoordinate2D(latitude: 123, longitude: 123)
                     self.addClinicTasker.addClinic(self.clinicToBeAdded)
                 })
             }
+    }
+    
+    private func getAddressString() -> String {
+        var addressString = ""
+        let formDict = self.form.values()
+        for key in addressPattern {
+            if let stringToAppend = formDict[key] as? String {
+                addressString.append(stringToAppend + ", ")
+            }
+        }
+        let lastIndex = addressString.index(addressString.endIndex, offsetBy: -2)
+        return addressString.substring(to: lastIndex)
     }
 
 }
@@ -77,5 +113,17 @@ extension AddClinicViewController: AddClinicTaskerDelegate {
     func didFaillAddingClinic(_ tasker: AddClinicTaskerInterface, error: Error) {
         print("did fail adding clinic")
     }
+}
+
+extension AddClinicViewController: GetCoordinatesFromAddressStringTaskerDelegate {
+    func didSucceedGettingCoordinatesFromAddressString(_ addressString: String, coordinates: CLLocationCoordinate2D) {
+        print(coordinates)
+    }
+    func didFailGettingCoordinatesFromAddressString(error: Error?) {
+        // TODO: Handle error
+        print(error)
+    }
+    
+    
 }
 

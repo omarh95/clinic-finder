@@ -10,9 +10,9 @@ import FirebaseDatabase
 
 class AddClinicTasker: AddClinicTaskerInterface {
     
-    var ref = Database.database().reference().child("Pending Clinics")
+    weak var delegate: AddClinicTaskerDelegate?
     
-    var delegate: AddClinicTaskerDelegate?
+    var ref = Database.database().reference().child("Pending Clinics")
     
     func addClinic(_ clinic: Clinic) {
         guard let clinicDict = clinic.convertToDictionary() else { return }
