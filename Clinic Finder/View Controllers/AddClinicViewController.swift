@@ -28,7 +28,6 @@ class AddClinicViewController: FormViewController {
     
     // The order in which the address string should be formed
     private let addressPattern = ["address_line_1",
-                                  "address_line_2",
                                   "city",
                                   "state",
                                   "zipcode"]
@@ -56,11 +55,6 @@ class AddClinicViewController: FormViewController {
                 row.placeholder = "E.g. 123 Sesame St."
             }
             <<< TextRow() { row in
-                row.tag = "address_line_2"
-                row.title = "Address Line 2"
-                row.placeholder = "E.g. Suite 123"
-            }
-            <<< TextRow() { row in
                 row.tag = "city"
                 row.title = "City"
                 row.placeholder = "E.g. Atlanta"
@@ -82,11 +76,8 @@ class AddClinicViewController: FormViewController {
                     self.showAlert(withTitle: "Thanks!",
                                    withMessage: "We will review this submission and add it as soon as we can",
                                    withButtonTitle: "Ok")
-                    // Fake location until geocoding is added
+                    self.view.showLoadingOverlay()
                     self.getCoordinatesTasker.getCoordinatesFromAddressString(self.getAddressString())
-                    
-                    self.clinicToBeAdded.location = CLLocationCoordinate2D(latitude: 123, longitude: 123)
-                    self.addClinicTasker.addClinic(self.clinicToBeAdded)
                 })
             }
     }
@@ -107,23 +98,24 @@ class AddClinicViewController: FormViewController {
 
 extension AddClinicViewController: AddClinicTaskerDelegate {
     func didSucceedAddingClinic(_ tasker: AddClinicTaskerInterface) {
-        print("did succeed adding clinic")
+        self.view.removeLoadingOverlay()
+        self.tabBarController?.selectedIndex = 0
     }
     
     func didFaillAddingClinic(_ tasker: AddClinicTaskerInterface, error: Error) {
-        print("did fail adding clinic")
+        self.view.removeLoadingOverlay()
     }
 }
 
 extension AddClinicViewController: GetCoordinatesFromAddressStringTaskerDelegate {
     func didSucceedGettingCoordinatesFromAddressString(_ addressString: String, coordinates: CLLocationCoordinate2D) {
-        print(coordinates)
+        self.clinicToBeAdded.location = coordinates
+        self.addClinicTasker.addClinic(self.clinicToBeAdded)
     }
+    
     func didFailGettingCoordinatesFromAddressString(error: Error?) {
         // TODO: Handle error
         print(error)
     }
-    
-    
 }
 

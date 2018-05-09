@@ -18,6 +18,7 @@ class AddClinicTasker: AddClinicTaskerInterface {
         guard let clinicDict = clinic.convertToDictionary() else { return }
         
         self.ref.child(clinic.name!).setValue(clinicDict)
+        delegate?.didSucceedAddingClinic(self)
     }
     
 }
