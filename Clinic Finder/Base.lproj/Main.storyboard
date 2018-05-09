@@ -64,7 +64,7 @@
                                                             <rect key="frame" x="20" y="82.5" width="335" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJZ-D3-gaf">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="162.5" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
                                                                     <state key="normal" image="Call Image">
                                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
@@ -73,12 +73,19 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-gA-eqz">
-                                                                    <rect key="frame" x="172.5" y="0.0" width="162.5" height="30"/>
+                                                                    <rect key="frame" x="115" y="0.0" width="105" height="30"/>
                                                                     <state key="normal" image="Directions Image">
                                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     </state>
                                                                     <connections>
                                                                         <action selector="directionsButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="Ex6-TA-qim"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqT-Xz-QpA">
+                                                                    <rect key="frame" x="230" y="0.0" width="105" height="30"/>
+                                                                    <state key="normal" image="More Info Image"/>
+                                                                    <connections>
+                                                                        <action selector="moreInforButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="lnE-Q6-mmH"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -206,6 +213,7 @@
         <image name="Add Clinic" width="30" height="30"/>
         <image name="Call Image" width="30" height="30"/>
         <image name="Directions Image" width="30" height="30"/>
+        <image name="More Info Image" width="30" height="30"/>
         <image name="Search" width="30" height="30"/>
     </resources>
 </document>

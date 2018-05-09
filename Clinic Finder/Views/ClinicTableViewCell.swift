@@ -31,6 +31,7 @@ class ClinicTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func callButtonPressed(_ sender: Any) {
         guard let selectedClinic = getSelectedClinic() else { return }
         if let phoneNumber = selectedClinic.phoneNumber {
@@ -43,6 +44,10 @@ class ClinicTableViewCell: UITableViewCell {
         if let name = selectedClinic.name, let location = selectedClinic.location {
             MapController.openMap(forLocation: location, andName: name)
         }
+    }
+    
+    @IBAction func moreInforButtonPressed(_ sender: Any) {
+        print("more info button pressed")
     }
     
     private func getSelectedClinic() -> Clinic? {
