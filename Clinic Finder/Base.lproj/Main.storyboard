@@ -86,6 +86,7 @@
                                                                     <state key="normal" image="More Info Image"/>
                                                                     <connections>
                                                                         <action selector="moreInforButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="lnE-Q6-mmH"/>
+                                                                        <segue destination="qMN-FU-7fv" kind="show" id="sTC-hK-fdQ"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -133,6 +134,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1749.5999999999999" y="-264.01799100449779"/>
+        </scene>
+        <!--More Information View Controller-->
+        <scene sceneID="yJ9-lF-G57">
+            <objects>
+                <viewController id="qMN-FU-7fv" customClass="MoreInformationViewController" customModule="Clinic_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zHf-4a-HVV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w3-lN-8zG">
+                                <rect key="frame" x="166" y="108" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="1mk-W6-IdF"/>
+                    </view>
+                    <connections>
+                        <outlet property="testLabel" destination="2w3-lN-8zG" id="xLm-S1-DYn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1x-AE-cIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2776" y="-236"/>
         </scene>
         <!--Add Clinic-->
         <scene sceneID="wg7-f3-ORb">

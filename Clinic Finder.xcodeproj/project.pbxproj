@@ -28,6 +28,7 @@
 		877CF66C2067253200F2B1F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 877CF6692067253200F2B1F9 /* GoogleService-Info.plist */; };
 		879AA97920A28DA500A282C9 /* GetCoordinatesFromAddressStringTasker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879AA97820A28DA500A282C9 /* GetCoordinatesFromAddressStringTasker.swift */; };
 		879AA97B20A28DC700A282C9 /* GetCoordinatesFromAddressStringTaskerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879AA97A20A28DC700A282C9 /* GetCoordinatesFromAddressStringTaskerInterface.swift */; };
+		879AA97D20A2A4F200A282C9 /* MoreInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879AA97C20A2A4F200A282C9 /* MoreInformationViewController.swift */; };
 		879ACD8120995F2C009C436C /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD8020995F2C009C436C /* MapController.swift */; };
 		879ACD8320996060009C436C /* PhoneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD8220996060009C436C /* PhoneController.swift */; };
 		879ACD86209970B6009C436C /* UIView+LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879ACD85209970B6009C436C /* UIView+LoadingOverlay.swift */; };
@@ -93,6 +94,7 @@
 		877CF6692067253200F2B1F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		879AA97820A28DA500A282C9 /* GetCoordinatesFromAddressStringTasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoordinatesFromAddressStringTasker.swift; sourceTree = "<group>"; };
 		879AA97A20A28DC700A282C9 /* GetCoordinatesFromAddressStringTaskerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoordinatesFromAddressStringTaskerInterface.swift; sourceTree = "<group>"; };
+		879AA97C20A2A4F200A282C9 /* MoreInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInformationViewController.swift; sourceTree = "<group>"; };
 		879ACD8020995F2C009C436C /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		879ACD8220996060009C436C /* PhoneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneController.swift; sourceTree = "<group>"; };
 		879ACD85209970B6009C436C /* UIView+LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LoadingOverlay.swift"; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				877CF63B20671AAD00F2B1F9 /* SearchClinicsViewController.swift */,
 				877CF63D20671AAD00F2B1F9 /* AddClinicViewController.swift */,
+				879AA97C20A2A4F200A282C9 /* MoreInformationViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				879ACD8120995F2C009C436C /* MapController.swift in Sources */,
 				879ACD8A209978A5009C436C /* LocationsButler.swift in Sources */,
 				87A89EA520685AAB003512E1 /* LoadClinicsTaskerInterface.swift in Sources */,
+				879AA97D20A2A4F200A282C9 /* MoreInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
