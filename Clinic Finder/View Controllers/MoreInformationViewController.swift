@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum MoreInfoTableViewCellType: Int {
+    case PhoneNumber
+    case Address
+}
+
 class MoreInformationViewController: UIViewController {
 
     @IBOutlet var clinicNameLabel: UILabel!
@@ -47,17 +52,26 @@ class MoreInformationViewController: UIViewController {
 
 extension MoreInformationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tableViewCellType = MoreInfoTableViewCellType(rawValue: indexPath.row)!
         let cell = UITableViewCell(style: .value2, reuseIdentifier: "clinic_info_cell")
-        cell.textLabel?.text = "Phone Number"
-        if let phoneNumber = selectedClinic?.phoneNumber {
-            cell.detailTextLabel?.text = String(phoneNumber)
-        } else {
-            cell.detailTextLabel?.text = "N/A"
+        switch tableViewCellType {
+        case .PhoneNumber:
+            cell.textLabel?.text = "Phone Number"
+            if let phoneNumber = selectedClinic?.phoneNumber {
+                cell.detailTextLabel?.text = String(phoneNumber)
+            } else {
+                cell.detailTextLabel?.text = "N/A"
+            }
+            return cell
+        case .Address:
+            let cell = UITableViewCell(style: .value2, reuseIdentifier: "clinic_info_cell")
+            cell.textLabel?.text = "Address"
+            cell.detailTextLabel?.text = selectedClinic?.addressString ?? "N/A"
+            return cell
         }
-        return cell
     }
 }

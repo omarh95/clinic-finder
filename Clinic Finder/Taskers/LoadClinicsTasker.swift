@@ -23,8 +23,13 @@ class LoadClinicsTasker: LoadClinicsTaskerInterface {
                 guard let clinicLocationData = clinicData["Location"] as? [String: Double] else { return }
                 let clinicCoordinates = CLLocationCoordinate2D(latitude: clinicLocationData["Lat"]!,
                                                                longitude: clinicLocationData["Long"]!)
+                let clinicAddressString = clinicData["Address-String"] as? String
                 let clinicPhoneNumber = clinicData["Phone-Number"]! as? Int
-                let clinicToAppend = Clinic(name: clinicName, location: clinicCoordinates, phoneNumber: clinicPhoneNumber!)
+                
+                let clinicToAppend = Clinic(name: clinicName,
+                                            location: clinicCoordinates,
+                                            addressString:clinicAddressString,
+                                            phoneNumber: clinicPhoneNumber!)
                 ClinicsButler.sharedInstance.allClinics.append(clinicToAppend)
             }
             strongSelf.delegate.didSucceedLoadingAllClinics(strongSelf)
