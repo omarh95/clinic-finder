@@ -10,11 +10,27 @@ import UIKit
 
 class MoreInformationViewController: UIViewController {
 
-    @IBOutlet var testLabel: UILabel!
+    @IBOutlet var clinicNameLabel: UILabel!
+    
+    @IBOutlet var clinicInfoTableView: UITableView!
+    
+    var selectedClinic: Clinic? {
+        get { return ClinicsButler.sharedInstance.selectedClinic }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        testLabel.text = "asdasdasd"
+        setupClinicNameLabel()
+        setupClinicInfoTableView()
+    }
+    
+    private func setupClinicNameLabel() {
+        clinicNameLabel.text = selectedClinic?.name
+    }
+    
+    private func setupClinicInfoTableView() {
+        clinicInfoTableView.delegate = self
+        clinicInfoTableView.dataSource = self
     }
 
     /*
@@ -27,4 +43,21 @@ class MoreInformationViewController: UIViewController {
     }
     */
 
+}
+
+extension MoreInformationViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .value2, reuseIdentifier: "clinic_info_cell")
+        cell.textLabel?.text = "Phone Number"
+        if let phoneNumber = selectedClinic?.phoneNumber {
+            cell.detailTextLabel?.text = String(phoneNumber)
+        } else {
+            cell.detailTextLabel?.text = "N/A"
+        }
+        return cell
+    }
 }

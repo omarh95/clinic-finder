@@ -16,9 +16,12 @@ class ClinicTableViewCell: UITableViewCell {
     @IBOutlet var clinicDistanceLabel: UILabel!
     
     var allClinics: [Clinic] {
-        get {
-            return LoadClinicsButler.sharedInstance.allClinics
-        }
+        get { return ClinicsButler.sharedInstance.allClinics }
+    }
+    
+    var selectedClinic: Clinic? {
+        get { return ClinicsButler.sharedInstance.selectedClinic }
+        set { ClinicsButler.sharedInstance.selectedClinic = newValue }
     }
     
     override func awakeFromNib() {
@@ -28,26 +31,21 @@ class ClinicTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        selectedClinic = getSelectedClinic()
     }
     
     @IBAction func callButtonPressed(_ sender: Any) {
-        guard let selectedClinic = getSelectedClinic() else { return }
+        guard let selectedClinic = selectedClinic else { return }
         if let phoneNumber = selectedClinic.phoneNumber {
             PhoneController.openPhoneApp(withPhoneNumber: phoneNumber)
         }
     }
     
     @IBAction func directionsButtonPressed(_ sender: Any) {
-        guard let selectedClinic = getSelectedClinic() else { return }
+        guard let selectedClinic = selectedClinic else { return }
         if let name = selectedClinic.name, let location = selectedClinic.location {
             MapController.openMap(forLocation: location, andName: name)
         }
-    }
-    
-    @IBAction func moreInforButtonPressed(_ sender: Any) {
-        print("more info button pressed")
     }
     
     private func getSelectedClinic() -> Clinic? {

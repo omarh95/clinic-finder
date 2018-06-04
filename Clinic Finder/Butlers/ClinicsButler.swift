@@ -1,16 +1,18 @@
 //
-//  LoadClinicsButler.swift
+//  ClinicsButler.swift
 //  Clinic Finder
 //
 //  Created by Hayek, Omar on 3/25/18.
 //  Copyright © 2018 Hayek, Omar. All rights reserved.
 //
 
-class LoadClinicsButler {
+class ClinicsButler {
     
     var allClinics = [Clinic]()
     
-    static let sharedInstance = LoadClinicsButler()
+    var selectedClinic: Clinic?
+    
+    static let sharedInstance = ClinicsButler()
     private init() { }
     
 }

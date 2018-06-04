@@ -40,9 +40,9 @@
 		87A89EA520685AAB003512E1 /* LoadClinicsTaskerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA420685AAB003512E1 /* LoadClinicsTaskerInterface.swift */; };
 		87A89EA620685AAB003512E1 /* LoadClinicsTaskerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA420685AAB003512E1 /* LoadClinicsTaskerInterface.swift */; };
 		87A89EA720685AAB003512E1 /* LoadClinicsTaskerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA420685AAB003512E1 /* LoadClinicsTaskerInterface.swift */; };
-		87A89EAA20685C26003512E1 /* LoadClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* LoadClinicsButler.swift */; };
-		87A89EAB20685C26003512E1 /* LoadClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* LoadClinicsButler.swift */; };
-		87A89EAC20685C26003512E1 /* LoadClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* LoadClinicsButler.swift */; };
+		87A89EAA20685C26003512E1 /* ClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* ClinicsButler.swift */; };
+		87A89EAB20685C26003512E1 /* ClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* ClinicsButler.swift */; };
+		87A89EAC20685C26003512E1 /* ClinicsButler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A89EA920685C26003512E1 /* ClinicsButler.swift */; };
 		87A89EB420687635003512E1 /* Georgia Tech.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 87A89EB320687635003512E1 /* Georgia Tech.gpx */; };
 		87A89EB520687635003512E1 /* Georgia Tech.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 87A89EB320687635003512E1 /* Georgia Tech.gpx */; };
 		87A89EB620687635003512E1 /* Georgia Tech.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 87A89EB320687635003512E1 /* Georgia Tech.gpx */; };
@@ -102,7 +102,7 @@
 		879ACD89209978A5009C436C /* LocationsButler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsButler.swift; sourceTree = "<group>"; };
 		87A89EA020675888003512E1 /* LoadClinicsTasker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsTasker.swift; sourceTree = "<group>"; };
 		87A89EA420685AAB003512E1 /* LoadClinicsTaskerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsTaskerInterface.swift; sourceTree = "<group>"; };
-		87A89EA920685C26003512E1 /* LoadClinicsButler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadClinicsButler.swift; sourceTree = "<group>"; };
+		87A89EA920685C26003512E1 /* ClinicsButler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClinicsButler.swift; sourceTree = "<group>"; };
 		87A89EB320687635003512E1 /* Georgia Tech.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Georgia Tech.gpx"; sourceTree = "<group>"; };
 		889D3C3DB0A92434D40787A0 /* Pods-Clinic FinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clinic FinderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clinic FinderUITests/Pods-Clinic FinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADA5E5D18185382E5E8322E5 /* Pods_Clinic_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clinic_FinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,7 +266,7 @@
 		87A89EA820685C06003512E1 /* Butlers */ = {
 			isa = PBXGroup;
 			children = (
-				87A89EA920685C26003512E1 /* LoadClinicsButler.swift */,
+				87A89EA920685C26003512E1 /* ClinicsButler.swift */,
 				879ACD89209978A5009C436C /* LocationsButler.swift */,
 			);
 			path = Butlers;
@@ -605,7 +605,7 @@
 				879AA97920A28DA500A282C9 /* GetCoordinatesFromAddressStringTasker.swift in Sources */,
 				877CF63E20671AAD00F2B1F9 /* AddClinicViewController.swift in Sources */,
 				875D9FC22086E33500869EC6 /* ClinicTableViewCell.swift in Sources */,
-				87A89EAA20685C26003512E1 /* LoadClinicsButler.swift in Sources */,
+				87A89EAA20685C26003512E1 /* ClinicsButler.swift in Sources */,
 				87A89EA120675888003512E1 /* LoadClinicsTasker.swift in Sources */,
 				879AA97B20A28DC700A282C9 /* GetCoordinatesFromAddressStringTaskerInterface.swift in Sources */,
 				870781A3209C0D53008D623E /* AddClinicTaskerInterface.swift in Sources */,
@@ -628,7 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87A89EA220675888003512E1 /* LoadClinicsTasker.swift in Sources */,
-				87A89EAB20685C26003512E1 /* LoadClinicsButler.swift in Sources */,
+				87A89EAB20685C26003512E1 /* ClinicsButler.swift in Sources */,
 				877CF65120671AAE00F2B1F9 /* Clinic_FinderTests.swift in Sources */,
 				87A89EA620685AAB003512E1 /* LoadClinicsTaskerInterface.swift in Sources */,
 			);
@@ -639,7 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87A89EA320675888003512E1 /* LoadClinicsTasker.swift in Sources */,
-				87A89EAC20685C26003512E1 /* LoadClinicsButler.swift in Sources */,
+				87A89EAC20685C26003512E1 /* ClinicsButler.swift in Sources */,
 				877CF65C20671AAE00F2B1F9 /* Clinic_FinderUITests.swift in Sources */,
 				87A89EA720685AAB003512E1 /* LoadClinicsTaskerInterface.swift in Sources */,
 			);

@@ -85,7 +85,6 @@
                                                                     <rect key="frame" x="230" y="0.0" width="105" height="30"/>
                                                                     <state key="normal" image="More Info Image"/>
                                                                     <connections>
-                                                                        <action selector="moreInforButtonPressed:" destination="nS3-0O-zYZ" eventType="touchUpInside" id="lnE-Q6-mmH"/>
                                                                         <segue destination="qMN-FU-7fv" kind="show" id="sTC-hK-fdQ"/>
                                                                     </connections>
                                                                 </button>
@@ -143,24 +142,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w3-lN-8zG">
-                                <rect key="frame" x="166" y="108" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w3-lN-8zG" userLabel="Clinic Name Label">
+                                <rect key="frame" x="0.0" y="64" width="375" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ydo-O7-GDC">
+                                <rect key="frame" x="0.0" y="183" width="375" height="435"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2w3-lN-8zG" firstAttribute="leading" secondItem="1mk-W6-IdF" secondAttribute="leading" id="1pf-PW-j9h"/>
+                            <constraint firstItem="1mk-W6-IdF" firstAttribute="trailing" secondItem="Ydo-O7-GDC" secondAttribute="trailing" id="27U-JZ-yXq"/>
+                            <constraint firstItem="1mk-W6-IdF" firstAttribute="trailing" secondItem="2w3-lN-8zG" secondAttribute="trailing" id="Qfj-MI-T8J"/>
+                            <constraint firstItem="2w3-lN-8zG" firstAttribute="top" secondItem="1mk-W6-IdF" secondAttribute="top" id="aXC-cl-xXO"/>
+                            <constraint firstItem="1mk-W6-IdF" firstAttribute="bottom" secondItem="Ydo-O7-GDC" secondAttribute="bottom" id="n2P-oF-CRm"/>
+                            <constraint firstItem="Ydo-O7-GDC" firstAttribute="top" secondItem="2w3-lN-8zG" secondAttribute="bottom" constant="71" id="twQ-s7-IKm"/>
+                            <constraint firstItem="Ydo-O7-GDC" firstAttribute="leading" secondItem="1mk-W6-IdF" secondAttribute="leading" id="zON-Zd-v7f"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1mk-W6-IdF"/>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="2w3-lN-8zG" id="xLm-S1-DYn"/>
+                        <outlet property="clinicInfoTableView" destination="Ydo-O7-GDC" id="MRd-Ak-rJt"/>
+                        <outlet property="clinicNameLabel" destination="2w3-lN-8zG" id="9cl-Lc-4fw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J1x-AE-cIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776" y="-236"/>
+            <point key="canvasLocation" x="2775.1999999999998" y="-236.13193403298354"/>
         </scene>
         <!--Add Clinic-->
         <scene sceneID="wg7-f3-ORb">

@@ -25,7 +25,7 @@ class LoadClinicsTasker: LoadClinicsTaskerInterface {
                                                                longitude: clinicLocationData["Long"]!)
                 let clinicPhoneNumber = clinicData["Phone-Number"]! as? Int
                 let clinicToAppend = Clinic(name: clinicName, location: clinicCoordinates, phoneNumber: clinicPhoneNumber!)
-                LoadClinicsButler.sharedInstance.allClinics.append(clinicToAppend)
+                ClinicsButler.sharedInstance.allClinics.append(clinicToAppend)
             }
             strongSelf.delegate.didSucceedLoadingAllClinics(strongSelf)
         }) { [weak self] (error) in

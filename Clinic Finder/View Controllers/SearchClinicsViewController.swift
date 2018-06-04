@@ -29,7 +29,7 @@ class SearchClinicsViewController: UIViewController, CLLocationManagerDelegate {
     
     var allClinics: [Clinic] {
         get {
-            return LoadClinicsButler.sharedInstance.allClinics
+            return ClinicsButler.sharedInstance.allClinics
         }
     }
     
@@ -50,7 +50,6 @@ class SearchClinicsViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
     }
     
     private func setupMapView() {
