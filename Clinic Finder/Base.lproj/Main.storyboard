@@ -45,7 +45,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Services" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9O-85-RI1" userLabel="Clinic Services Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clinic Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9O-85-RI1" userLabel="Clinic Address Label">
                                                             <rect key="frame" x="8" y="45.5" width="317" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -61,7 +61,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oiC-Sr-C0U">
-                                                            <rect key="frame" x="20" y="82.5" width="335" height="30"/>
+                                                            <rect key="frame" x="20" y="82" width="335" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJZ-D3-gaf">
                                                                     <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
@@ -105,9 +105,9 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="clinicAddressLabel" destination="T9O-85-RI1" id="zOS-vT-x9C"/>
                                                     <outlet property="clinicDistanceLabel" destination="aLr-Cu-dGa" id="5pB-mW-AMr"/>
                                                     <outlet property="clinicNameLabel" destination="y6T-cZ-Heu" id="Mw4-zp-MWg"/>
-                                                    <outlet property="clinicServicesLabel" destination="T9O-85-RI1" id="6HK-fb-ExM"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

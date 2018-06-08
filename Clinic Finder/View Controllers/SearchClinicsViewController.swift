@@ -89,7 +89,7 @@ extension SearchClinicsViewController: UITableViewDelegate, UITableViewDataSourc
         } else {
             cell.clinicDistanceLabel.text = "N/A"
         }
-        cell.clinicServicesLabel.text = currentClinic.addressString
+        cell.clinicAddressLabel.text = currentClinic.addressString
         return cell
     }
     

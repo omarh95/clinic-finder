@@ -12,7 +12,7 @@ import MapKit
 class ClinicTableViewCell: UITableViewCell {
     
     @IBOutlet var clinicNameLabel: UILabel!
-    @IBOutlet var clinicServicesLabel: UILabel!
+    @IBOutlet var clinicAddressLabel: UILabel!
     @IBOutlet var clinicDistanceLabel: UILabel!
     
     var allClinics: [Clinic] {
