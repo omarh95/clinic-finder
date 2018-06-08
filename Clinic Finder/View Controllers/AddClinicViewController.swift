@@ -44,10 +44,12 @@ class AddClinicViewController: FormViewController {
                 row.placeholder = "Enter name here"
                 row.add(rule: RuleRequired())
                 }.cellUpdate({ (cell, row) in
-                    self.clinicToBeAdded.name = row.value
                     if !row.isValid {
                         cell.titleLabel?.textColor = .red
                     }
+                }).onChange({ (row) in
+                    self.clinicToBeAdded.name = row.value
+
                 })
             <<< PhoneRow() {
                 $0.tag = "clinic phone number"
@@ -56,10 +58,11 @@ class AddClinicViewController: FormViewController {
                 $0.add(rule: RuleRequired())
                 $0.add(rule: RuleExactLength(exactLength: 10, msg: "too long!"))
                 }.cellUpdate({ (cell, row) in
-                    self.clinicToBeAdded.phoneNumber = Int(row.value ?? "")
                     if !row.isValid {
                         cell.titleLabel?.textColor = .red
                     }
+                }).onChange({ (row) in
+                    self.clinicToBeAdded.phoneNumber = Int(row.value ?? "")
                 })
         +++ Section("Location Information")
             <<< TextRow() { row in
@@ -72,6 +75,7 @@ class AddClinicViewController: FormViewController {
                         cell.titleLabel?.textColor = .red
                     }
                 })
+            
             <<< TextRow() { row in
                 row.tag = "city"
                 row.title = "City"
@@ -153,12 +157,14 @@ extension AddClinicViewController: AddClinicTaskerDelegate {
 extension AddClinicViewController: GetCoordinatesFromAddressStringTaskerDelegate {
     func didSucceedGettingCoordinatesFromAddressString(_ addressString: String, coordinates: CLLocationCoordinate2D) {
         self.clinicToBeAdded.location = coordinates
+        self.clinicToBeAdded.addressString = getAddressString()
         self.addClinicTasker.addClinic(self.clinicToBeAdded)
     }
     
     func didFailGettingCoordinatesFromAddressString(error: Error?) {
         // TODO: Handle error
-        print(error)
+        self.view.removeLoadingOverlay()
+        self.tabBarController?.selectedIndex = 0
     }
 }
 
