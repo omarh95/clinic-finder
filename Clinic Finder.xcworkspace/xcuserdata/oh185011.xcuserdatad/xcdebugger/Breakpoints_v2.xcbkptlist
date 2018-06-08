@@ -44,11 +44,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clinic Finder/View Controllers/AddClinicViewController.swift"
-            timestampString = "549779280.2191809"
+            timestampString = "550126234.488297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "didSucceedGettingCoordinatesFromAddressString(_:coordinates:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -60,11 +60,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clinic Finder/View Controllers/AddClinicViewController.swift"
-            timestampString = "549779280.219551"
+            timestampString = "550126234.4886039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "didFailGettingCoordinatesFromAddressString(error:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -108,11 +108,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clinic Finder/View Controllers/AddClinicViewController.swift"
-            timestampString = "549779280.220207"
+            timestampString = "550126234.488826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "didSucceedAddingClinic(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -124,12 +124,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clinic Finder/View Controllers/AddClinicViewController.swift"
-            timestampString = "549779280.220404"
+            timestampString = "550126234.489022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "didFaillAddingClinic(_:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clinic Finder/View Controllers/AddClinicViewController.swift"
+            timestampString = "550126234.4892139"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

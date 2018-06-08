@@ -31,48 +31,91 @@ class AddClinicViewController: FormViewController {
                                   "city",
                                   "state",
                                   "zipcode"]
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         form
         +++ Section("Clinic Information")
             <<< TextRow() { row in
+                row.tag = "clinic name"
                 row.title = "Clinic Name"
                 row.placeholder = "Enter name here"
-                }.onChange({ (row) in
+                row.add(rule: RuleRequired())
+                }.cellUpdate({ (cell, row) in
                     self.clinicToBeAdded.name = row.value
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
                 })
             <<< PhoneRow() {
+                $0.tag = "clinic phone number"
                 $0.title = "Clinic Phone Number"
                 $0.placeholder = "e.g. 4042781234"
-                }.onChange({ (row) in
-                    self.clinicToBeAdded.phoneNumber = Int(row.value!)
+                $0.add(rule: RuleRequired())
+                $0.add(rule: RuleExactLength(exactLength: 10, msg: "too long!"))
+                }.cellUpdate({ (cell, row) in
+                    self.clinicToBeAdded.phoneNumber = Int(row.value ?? "")
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
                 })
         +++ Section("Location Information")
             <<< TextRow() { row in
                 row.tag = "address_line_1"
                 row.title = "Address Line 1"
                 row.placeholder = "E.g. 123 Sesame St."
-            }
+                row.add(rule: RuleRequired())
+                }.cellUpdate({ (cell, row) in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                })
             <<< TextRow() { row in
                 row.tag = "city"
                 row.title = "City"
+                row.add(rule: RuleRequired())
                 row.placeholder = "E.g. Atlanta"
-            }
+                }.cellUpdate({ (cell, row) in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                })
             <<< TextRow() { row in
                 row.tag = "state"
                 row.title = "State"
+                row.add(rule: RuleRequired())
                 row.placeholder = "GA"
-            }
+                }.cellUpdate({ (cell, row) in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                })
             <<< TextRow() { row in
                 row.tag = "zipcode"
                 row.title = "Zipcode"
+                row.add(rule: RuleRequired())
+                row.add(rule: RuleExactLength(exactLength: 5))
                 row.placeholder = "E.g. 30308"
-            }
+                }.cellUpdate({ (cell, row) in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
+                })
         +++ Section()
             <<< ButtonRow() { row in
                 row.title = "Submit"
+                row.disabled = Condition.function(Array(self.form.values().keys), { (form) -> Bool in
+                    for row in form.allRows {
+                        if !row.isValid {
+                            return false
+                        }
+                    }
+                    return true
+                })
                 row.onCellSelection({ (cell, row) in
+                    guard !row.isDisabled else { return }
                     self.showAlert(withTitle: "Thanks!",
                                    withMessage: "We will review this submission and add it as soon as we can",
                                    withButtonTitle: "Ok")
